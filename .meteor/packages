@@ -30,3 +30,5 @@ coffeescript
 fourseven:scss
 percolate:momentum
 philippspo:momentum-flow-router
+meteorhacks:fast-render
+kadira:blaze-layout

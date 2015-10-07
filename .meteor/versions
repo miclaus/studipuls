@@ -22,6 +22,7 @@ cfs:base-package@0.0.30
 cfs:gridfs@0.0.33
 cfs:storage-adapter@0.2.2
 check@1.0.6
+chuangbo:cookie@1.1.0
 coffeescript@1.0.10
 cosmos:browserify@0.5.1
 ddp@1.2.2
@@ -48,6 +49,7 @@ http@1.1.1
 id-map@1.0.4
 insecure@1.0.4
 jquery@1.11.4
+kadira:blaze-layout@2.1.0
 kadira:flow-router@2.7.0
 launch-screen@1.0.4
 less@2.5.0_3
@@ -56,6 +58,9 @@ localstorage@1.0.5
 logging@1.0.8
 meteor@1.1.9
 meteor-base@1.0.1
+meteorhacks:fast-render@2.10.0
+meteorhacks:inject-data@1.4.1
+meteorhacks:picker@1.0.3
 minifiers@1.1.7
 minimongo@1.0.10
 mobile-experience@1.0.1
