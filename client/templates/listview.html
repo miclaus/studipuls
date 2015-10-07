@@ -1,11 +1,27 @@
 <template name="listview">
-	<div class="header-panel shadow-z-2">
-		<div class="container-fluid">
+
+	{{> header }}
+
+	<div id="chatrooms">
+		{{#each chatrooms }}
 			<div class="row">
-				<div class="col-12">
-					<img id="logo" src="img/logo.png">
+				<div class="list-group">
+				    <div class="list-group-item">
+				        <!-- <div class="row-action-primary">
+				            <i class="mdi-file-folder"></i>
+				        </div> -->
+				        <div class="row-content">
+				            <div class="least-content">
+								<span>{{ onlineCount }} Online</span>
+								<span>{{ momentsCount }} Moments</span>
+							</div>
+				            <h4 class="list-group-item-heading">{{ name }}</h4>
+				            <p class="list-group-item-text">{{ description }}</p>
+				        </div>
+				    </div>
+				    <div class="list-group-separator"></div>
 				</div>
 			</div>
-		</div>
+		{{/each}}
 	</div>
 </template>
