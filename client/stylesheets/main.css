@@ -1,5 +1,12 @@
 body {
-	overflow : y-scroll;
+	overflow   : y-scroll;
+
+	background : url(img/background.jpg) no-repeat center center fixed; 
+
+	-webkit-background-size : cover;
+	-moz-background-size 	: cover;
+	-o-background-size 		: cover;
+	background-size 		: cover;
 }
 
 #logo {

@@ -1,5 +1,20 @@
-#chatrooms
+#listview_content
 {
-	margin-top : 78px; /* 62 + 1em(16px) */
-	padding    : 1em;
+	margin-top  : 62px;
+	background  : rgba(255, 255, 255, 0.9);
+	padding-top : 1em;
+}
+
+#wrapper_search,
+#list_chatrooms
+{
+	padding : 1em
+}
+
+#search_chatrooms {
+	margin-bottom : 0
+}
+
+.chatrooms-item {
+	padding-top : 1em
 }

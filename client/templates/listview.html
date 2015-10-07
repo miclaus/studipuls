@@ -2,26 +2,42 @@
 
 	{{> header }}
 
-	<div id="chatrooms">
-		{{#each chatrooms }}
-			<div class="row">
-				<div class="list-group">
-				    <div class="list-group-item">
-				        <!-- <div class="row-action-primary">
-				            <i class="mdi-file-folder"></i>
-				        </div> -->
-				        <div class="row-content">
-				            <div class="least-content">
-								<span>{{ onlineCount }} Online</span>
-								<span>{{ momentsCount }} Moments</span>
-							</div>
-				            <h4 class="list-group-item-heading">{{ name }}</h4>
-				            <p class="list-group-item-text">{{ description }}</p>
-				        </div>
-				    </div>
-				    <div class="list-group-separator"></div>
+	<div id="listview_content">
+		<div id="wrapper_search" class="form-group">
+			<div class="input-group">
+		        <span class="input-group-addon">
+					<i class="mdi-action-search"></i>
+				</span>
+
+				<input
+					type="text"
+					id="search_chatrooms"
+					class="form-control floating-label"
+					placeholder="Search for chatrooms">
+		    </div>
+		</div>
+
+		<div id="list_chatrooms">
+			{{#each chatrooms }}
+				<div class="row chatrooms-item">
+					<div class="list-group">
+					    <div class="list-group-item">
+					        <!-- <div class="row-action-primary">
+					            <i class="mdi-file-folder"></i>
+					        </div> -->
+					        <div class="row-content">
+					            <div class="least-content">
+									<span>{{ onlineCount }} Online</span>
+									<span>{{ momentsCount }} Moments</span>
+								</div>
+					            <h4 class="list-group-item-heading">{{ name }}</h4>
+					            <p class="list-group-item-text">{{ description }}</p>
+					        </div>
+					    </div>
+					    <div class="list-group-separator"></div>
+					</div>
 				</div>
-			</div>
-		{{/each}}
+			{{/each}}
+		</div>
 	</div>
 </template>
