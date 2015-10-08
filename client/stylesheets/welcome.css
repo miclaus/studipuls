@@ -1,0 +1,57 @@
+#welcome {
+	width: 100%;
+	height: 100%;
+	
+	background: #a11d3c;
+	text-align: center;
+}
+
+#welcome h1 {
+	text-transform: capitalize;
+}
+
+#welcome_enter {
+	margin-top: 40px;
+	margin-bottom: 40px;
+}
+
+#welcome_enter_circle_one,
+#welcome_enter_circle_two {
+	background: transparent;
+	border-radius: 50%;
+
+	margin: 0 auto;
+}
+
+#welcome_enter_circle_one {
+	width: 155px;
+	height: 155px;
+
+	border: 2px solid rgba(255,255,255,0.5);
+}
+
+#welcome_enter_circle_two {
+	width: 133px;
+	height: 133px;
+
+	border: 2px solid rgba(255,255,255,0.9);
+	margin-top: 9px;
+}
+
+#welcome_enter_button {
+	width: 105px;
+	height: 105px;
+
+	background: #fff;
+	border-radius: 50%;
+
+	margin: 0 auto;
+	margin-top: 12px;
+
+	cursor: pointer;
+}
+
+#welcome_enter_icon {
+	font-size: 3em;
+	color: #a11d3c;
+}

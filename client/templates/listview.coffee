@@ -1,3 +1,8 @@
+Template.listview.rendered = ->
+	Deps.autorun ->
+		if Session.equals('hideWelcome',true)
+			$('#listview').show()
+
 Template.listview.helpers {
 	chatrooms : ->
 		console.warn 'TODO - get all chatrooms from db'
@@ -12,7 +17,6 @@ Template.listview.helpers {
 			{ name : 'Audio Studio C', 			  code : 'audio-c', 		   description : 'This is the dreadful Audio Studio C', 			  onlineCount : 32, momentsCount : 128 }
 		]
 }
-
 
 Template.listview.events {
 	'focus #search_chatrooms' : ->
