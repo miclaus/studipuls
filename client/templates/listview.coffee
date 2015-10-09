@@ -2,6 +2,8 @@ Template.listview.rendered = ->
 	Deps.autorun ->
 		if Session.equals('hideWelcome',true)
 			$('#listview').show()
+		else
+			$('#listview').hide()
 
 Template.listview.helpers {
 	chatrooms : ->

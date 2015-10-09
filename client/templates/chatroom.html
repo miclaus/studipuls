@@ -3,12 +3,35 @@
 	{{> welcome}}
 
 	<div id="chatroom">
-		{{> header }}
+		<div id="chatroom_info">
+			<h1>{{room}}</h1>
+			<p>{{users}}</p>
+			<span id="chatroom_icon_user" class="chatroom-icon glyphicon glyphicon-user" aria-hidden="true"></span>
+			<p>{{moments}}</p>
+			<span id="chatroom_icon_moments" class="chatroom-icon glyphicon glyphicon-camera" aria-hidden="true"></span>
+		</div>
 
-		<h1>Chatroom ...</h1>
+		<div id="chatroom_content" class="container-fluid">
+			<div id="chatroom_pictures" class="row">
+				{{#each pictures }}
+					<div class="col-xs-6">
+						<img src="{{picture}}" alt="{{room}}">
+						<div class="chatroom-picture-likes display-table">
+							<p class="display-table-cell">{{likes}}</p>
+						</div>
+					</div>
+				{{/each}}
+			</div>
+		</div>
 
-		<h1>Chatroom ...</h1>
-
-		<h1 style="color:white">Chatroom ...</h1>
+		<div id="chatroom_upload">
+			<div id="chatroom_upload_circle_one">
+  				<div id="chatroom_upload_circle_two">
+  					<div id="chatroom_upload_button" class="display-table">
+  						<i id="chatroom_upload_icon" class="display-table-cell mdi-content-add"></i>
+  					</div>
+  				</div>
+  			</div>
+		</div>
 	</div>
 </template>

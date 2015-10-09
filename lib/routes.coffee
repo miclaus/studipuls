@@ -6,6 +6,7 @@ FlowRouter.route '/', {
         console.info 'query params:', queryParams
 
         BlazeLayout.render 'main', {
+            top  : 'header'
             main : 'listview'
         }
 }
@@ -20,6 +21,7 @@ FlowRouter.route '/:chatroom', {
         console.info 'query params:', queryParams
 
         BlazeLayout.render 'main', {
+            top  : 'header'
             main : 'chatroom'
         }
 }
