@@ -12,18 +12,16 @@ Template.chatroom.helpers {
 		# TODO get active sessions
 		return 10
 	moments : ->
-		# TODO get pictures.length
-		return 62
+		chatroom = Session.get('chatroom')
+		Pictures.find({room : chatroom}).fetch().length
 	pictures : ->
-		console.warn 'TODO - get all pictures from db - picture have to be a square'
-		aula = [
-			{ picture: 'img/placeholder.jpg', likes: 22 },
-			{ picture: 'img/placeholder.jpg', likes: 25 },
-			{ picture: 'img/placeholder.jpg', likes: 830},
-			{ picture: 'img/placeholder.jpg', likes: 512 },
-			{ picture: 'img/placeholder.jpg', likes: 1 },
-			{ picture: 'img/placeholder.jpg', likes: 9 },
-			{ picture: 'img/placeholder.jpg', likes: 23 },
-			{ picture: 'img/placeholder.jpg', likes: 26 }
-		]
+		chatroom = Session.get('chatroom')
+		pictures = Pictures.find({room : chatroom}).fetch()
 } 
+
+Template.chatroom.events {
+	'click #chatroom_pictures' : (event) ->
+		pictureId = $(event.target).attr('data-ref')
+		chatroom = Session.get('chatroom')
+		FlowRouter.go('/' + chatroom + '/' + pictureId)
+}
