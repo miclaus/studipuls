@@ -9,8 +9,8 @@ Template.chatroom.helpers {
 	room : ->
 		Session.get('chatroom')
 	users : ->
-		# TODO get active sessions
-		return 10
+		chatroom = Session.get('chatroom')
+		Chatrooms.findOne({name : chatroom}).users
 	moments : ->
 		chatroom = Session.get('chatroom')
 		Pictures.find({room : chatroom}).fetch().length

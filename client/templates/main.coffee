@@ -9,6 +9,8 @@ Template.main.rendered = ->
 		if Session.equals('hideWelcome',true)
 			$('#welcome').hide()
 			$('#header').show()
+			$('body').css('height','auto')
 		else
 			$('#header').hide()
 			$('#welcome').show()
+			$('body').css('height','100%')
