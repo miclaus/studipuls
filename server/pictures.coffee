@@ -1,47 +1,47 @@
 # NOTE dev only
-#Pictures.remove {}
+# Pictures.remove {}
 
 if Pictures.find().count() == 0
 	pictures = [ 
 		{ 
 			url: '/uploads/placeholder.jpg'
 			room: 'audimax'
-			likes: 22 
+			likes: 0 
 		}
 		{
 			url: '/uploads/placeholder.jpg'
 			room: 'audimax'
-			likes: 25 
+			likes: 0 
 		}
 		{ 
 			url: '/uploads/placeholder.jpg'
 			room: 'mensa'
-			likes: 830
+			likes: 0
 		}
 		{ 
 			url: '/uploads/placeholder.jpg'
 			room: 'mensa'
-			likes: 512 
+			likes: 0 
 		}
 		{ 
 			url: '/uploads/placeholder.jpg'
 			room: 'mensa'
-			likes: 1
+			likes: 0
 		}
 		{
 			url: '/uploads/placeholder.jpg'
 			room: 'aula'
-			likes: 9
+			likes: 0
 		}
 		{ 
 			url: '/uploads/placeholder.jpg'
 			room: 'aula'
-			likes: 23 
+			likes: 0 
 		}
 		{ 	
 			url: '/uploads/placeholder.jpg'
 			room: 'aula'
-			likes: 26
+			likes: 0
 		}
 	]
 

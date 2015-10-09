@@ -2,7 +2,7 @@
 # Chatrooms.remove {}
 
 if Chatrooms.find().count() == 0
-	chatrooms = [ 
+	chatrooms = [
 		{ 
 			name: 'audimax'
 			users: 0
