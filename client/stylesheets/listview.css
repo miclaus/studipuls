@@ -2,50 +2,104 @@
 	display: none;
 }
 
-#listview_content
-{
-	background  : rgba(255, 255, 255, 0.9);
-	margin-top  : 62px;
-	padding-top : 1em;
-}
-
 #wrapper_search
 {
-	position   : fixed;
-	top : 62px;
-	padding-top: 1em;
-	background  : rgb(255, 255, 255);
+	position: fixed;
+	top : 50px;
+	left: 1%;
+	width: 100%;
+	height: 70px;
+	padding-top: 14px;
+	background: #fff;
 	z-index : 1;
-}
-
-#wrapper_search,
-#list_chatrooms
-{
-	padding : 1em
-}
-#list_chatrooms {
-	margin-top : 64px;
 }
 
 #search_chatrooms
 {
+	width: 85%;
+	color: #333;
+	font-size: 1.5em;
+	margin-top: 5px;
 	margin-bottom : 0;
-
-	background-image : linear-gradient(blue, blue);
+	background-image: linear-gradient(#a11d3c, #a11d3c);
 }
 
-.chatrooms-item
-{
-	padding-top : 1em;
-	cursor : pointer;
-}
-.chatrooms-item:hover
-{
-	background : lightgray;
-	color : white;
+#search_icon {
+	font-size: 2.2em;
+	color: #a11d3c;
 }
 
-.shadow-search
-{
-	box-shadow : 0 16px 17px 0 rgba(0,0,0,.2), 0 3px 5px 0 rgba(0,0,0,.19);
+#search_no_results p {
+	color: #333;
+	font-size: 1.3em;
+	text-align: center;
+}
+
+#listview_content {
+	width: 96%;
+	margin: 0 auto;
+	margin-top: 120px;
+}
+
+.wrapper-list-chatroom-item {
+	padding: 0;
+	padding-bottom: 6px;
+}
+
+.wrapper-list-chatroom-item::before {
+	content: "";
+	display: block;
+	background: #333;
+	padding-top: 100%; 	/* ratio of 1:1 */
+}
+
+.wrapper-list-chatroom-item:hover::before {
+	background: #a11d3c;
+}
+
+.wrapper-list-chatroom-item:nth-child(odd) {
+	padding-right: 3px;
+}
+
+.wrapper-list-chatroom-item:nth-child(even) {
+	padding-left: 3px;
+}
+
+.list-chatroom-item {
+	position: absolute;
+	top: 22%;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	text-align: center;
+	padding: 0;
+	cursor: pointer;
+}
+
+.list-chatroom-item h1 {
+	font-size: 1.7em;
+	margin-bottom: 15px;
+}
+
+.list-chatroom-icon {
+	font-size: 1.4em;
+}
+
+.wrapper-chatroom-users,
+.wrapper-chatroom-moments {
+	width: 40%;
+	float: left;
+}
+
+.wrapper-chatroom-users {
+	margin-left: 10%;
+}
+
+.wrapper-chatroom-moments {
+	margin-right: 10%;
+}
+
+.wrapper-chatroom-users p,
+.wrapper-chatroom-moments p {
+	font-size: 1.3em;
 }
