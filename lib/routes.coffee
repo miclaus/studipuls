@@ -22,7 +22,6 @@ FlowRouter.route '/:chatroom',
             main: 'chatroom'
 
     # track active users
-    # TODO what if the user just closes browser ?
     triggersEnter: [ (context, redirect) ->
         chatroomId = Chatrooms.findOne({name : context.params.chatroom})._id
         Chatrooms.update { _id : chatroomId },
