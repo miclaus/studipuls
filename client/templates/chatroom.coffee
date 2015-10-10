@@ -5,7 +5,7 @@ Meteor._reload.onMigrate ->
   hotcodepush = true
   [ true ]
 
-window.addEventListener 'beforeunload', (e) ->
+window.addEventListener 'pagehide', (e) ->
   if not hotcodepush
     chatroom = Session.get('chatroom')
     chatroomId = Chatrooms.findOne({name : chatroom})._id
@@ -31,7 +31,7 @@ Template.chatroom.helpers {
 		Pictures.find({room : chatroom}).fetch().length
 	pictures : ->
 		chatroom = Session.get('chatroom')
-		pictures = Pictures.find({room : chatroom}).fetch()
+		pictures = Pictures.find({room : chatroom}, {sort: {createdAt: -1}}).fetch()
 } 
 
 Template.chatroom.events {
