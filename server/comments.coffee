@@ -9,6 +9,7 @@ Meteor.methods
 		], [ String ]
 
 		Comments.insert
-			message: message
-			pictureId: pictureId
+			createdAt	: new Date().toString()
+			message 	: message
+			pictureId	: pictureId
 		return

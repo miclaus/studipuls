@@ -19,8 +19,4 @@ Template.picture.events {
 
 	'click #picture_message_icon' : ->
 		$('#message').focus()
-
-	'keyup #message' : (event) ->
-		if event.keyCode is 13
-			Meteor.call 'insertComment'	
 }
