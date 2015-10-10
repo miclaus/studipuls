@@ -1,3 +1,18 @@
+## remove user from active sessions if browser reloads/window closed
+hotcodepush = false
+
+Meteor._reload.onMigrate ->
+  hotcodepush = true
+  [ true ]
+
+window.addEventListener 'beforeunload', (e) ->
+  if not hotcodepush
+    chatroom = Session.get('chatroom')
+    chatroomId = Chatrooms.findOne({name : chatroom})._id
+    Chatrooms.update { _id : chatroomId },
+        $inc: { users: -1 }
+  return
+
 Template.chatroom.rendered = ->
 	Deps.autorun ->
 		if Session.equals('hideWelcome',true)
