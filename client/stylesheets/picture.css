@@ -1,0 +1,32 @@
+#picture img {
+	width: 100%;
+	margin-top: 50px;
+}
+
+#picture_likes,
+#picture_message {
+	position: absolute;
+	left: 2%;
+
+	width: 50px;
+	height: 50px;
+
+	background: #a11d3c;
+	border-radius: 50%;
+	box-shadow : 0 4px 2px 0 rgba(0,0,0,.2), 0 3px 5px 0 rgba(0,0,0,.19);
+	
+	font-size: 1.5em;
+	text-align: center;
+
+	float: right;
+	cursor: pointer;
+}
+
+#picture_likes {
+	font-family: 'dosissemibold', 'Helvetica Neue', Arial, sans-serif;;
+	top: 60px;
+}
+
+#picture_message {
+	top: 120px;
+}

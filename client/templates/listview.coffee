@@ -28,7 +28,8 @@ Template.listview.helpers {
 		searchChatrooms()
 	moments : ->
 		# TODO get moments length
-		# pictures = Pictures.find({room : chatroom}).fetch()
+		# Pictures.find({room : chatroom}).fetch().length
+		return "Todo"
 }
 
 Template.listview.events {

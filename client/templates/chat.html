@@ -1,4 +1,31 @@
 <template name="chat">
-
-
+	<div id="chat">
+		<div id="wrapper_message" class="form-group">
+			<span class="input-group-addon">
+				<i id="message_icon" class="mdi-image-edit"></i>
+			</span>
+			<div class="input-group">
+				<input
+					type="text"
+					id="message"
+					class="form-control floating-label"
+					maxlength="200"
+					placeholder="type in your message">
+			</div>
+		</div>
+		<div id="wrapper_comments">
+			{{#each comments }}
+				<div class="list-group">
+				    <div class="list-group-item">
+				        <div class="row-content display-table">
+				            <div class="least-content display-table-cell">
+				            	<p class="list-group-item-text">{{ message }}</p>
+				        	</div>
+				    	</div>
+				    </div>
+				</div>
+				<!--<div class="list-group-separator"></div>-->
+			{{/each}}
+		</div>
+	</div>
 </template>

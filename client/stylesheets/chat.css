@@ -1,0 +1,68 @@
+#wrapper_message {
+	width: 80%;
+	height: 70px;
+	background: #fff;
+	padding-top: 14px;
+	margin-left: 3%;
+	margin-top: 15px;
+}
+
+#wrapper_message > .input-group-addon {
+	float: left;
+	background: #fff;
+	border: none;
+}
+
+#message_icon {
+	font-size: 2.2em;
+	color: #a11d3c;
+}
+
+#wrapper_message > .input-group {
+	width: 80%;
+}
+
+#message
+{
+	color: #333;
+	font-size: 1.3em;
+	background-image: linear-gradient(#a11d3c, #a11d3c);
+	margin-left: 40px;
+	margin-top: 7px;
+}
+
+.list-group {
+	margin: 0;
+	box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.07);
+    -webkit-box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.07);
+    -moz-box-shadow: inset 0 0 7px rgba(0, 0, 0, 0.07);
+}
+
+.list-group .list-group-item .row-content {
+	display: table !important;
+}
+
+.list-group .list-group-item .least-content {
+	position: relative !important;
+	left: 3%;
+}
+
+.list-group p {
+	font-size: 1.3em;
+}
+
+#wrapper_comments > div:nth-child(odd) {
+	background: #a11d3c;
+}
+
+#wrapper_comments > div:nth-child(odd) p {
+	color: #fff;
+}
+
+#wrapper_comments > div:nth-child(even) {
+	background: #fff;
+}
+
+#wrapper_comments > div:nth-child(even) p {
+	color: #333;
+}

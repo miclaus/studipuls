@@ -1,39 +1,38 @@
 /* ========
-	  COLORS
+	COLORS
    ======== */
 
 /*
   #a11d3c
- 	#333
+	#333
 */
 
-
 /* =======
-	  FONTS
+	FONTS
    ======= */
 
 @font-face {
-    font-family: 'dosisregular';
-    src: url('/fonts/dosis/dosis-regular-webfont.eot');
-    src: url('/fonts/dosis/dosis-regular-webfont.eot?#iefix') format('embedded-opentype'),
-    	 url('/fonts/dosis/dosis-regular-webfont.woff2') format('woff2'),
-         url('/fonts/dosis/dosis-regular-webfont.woff') format('woff'),
-         url('/fonts/dosis/dosis-regular-webfont.ttf') format('truetype'),
-         url('/fonts/dosis/dosis-regular-webfont.svg#dosisregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'dosisregular';
+	src: url('/fonts/dosis/dosis-regular-webfont.eot');
+	src: url('/fonts/dosis/dosis-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('/fonts/dosis/dosis-regular-webfont.woff2') format('woff2'),
+		 url('/fonts/dosis/dosis-regular-webfont.woff') format('woff'),
+		 url('/fonts/dosis/dosis-regular-webfont.ttf') format('truetype'),
+		 url('/fonts/dosis/dosis-regular-webfont.svg#dosisregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
 
 @font-face {
-    font-family: 'dosissemibold';
-    src: url('/fonts/dosis/dosis-semibold-webfont.eot');
-    src: url('/fonts/dosis/dosis-semibold-webfont.eot?#iefix') format('embedded-opentype'),
-    	 url('/fonts/dosis/dosis-semibold-webfont.woff2') format('woff2'),
-         url('/fonts/dosis/dosis-semibold-webfont.woff') format('woff'),
-         url('/fonts/dosis/dosis-semibold-webfont.ttf') format('truetype'),
-         url('/fonts/dosis/ddosis-semibold-webfont.svg#dosisregular') format('svg');
-    font-weight: normal;
-    font-style: normal;
+	font-family: 'dosissemibold';
+	src: url('/fonts/dosis/dosis-semibold-webfont.eot');
+	src: url('/fonts/dosis/dosis-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('/fonts/dosis/dosis-semibold-webfont.woff2') format('woff2'),
+		 url('/fonts/dosis/dosis-semibold-webfont.woff') format('woff'),
+		 url('/fonts/dosis/dosis-semibold-webfont.ttf') format('truetype'),
+		 url('/fonts/dosis/ddosis-semibold-webfont.svg#dosisregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
 }
 
 
@@ -60,10 +59,10 @@ h6 {
 	font-family: 'dosisregular', 'Helvetica Neue', Arial, sans-serif;
 	color: #fff;
 
-    -webkit-font-smoothing  : antialiased;
-    -moz-osx-font-smoothing : grayscale;
+	-webkit-font-smoothing  : antialiased;
+	-moz-osx-font-smoothing : grayscale;
 
-    margin: 0;
+	margin: 0;
 }
 
 h1 {
@@ -80,10 +79,10 @@ input,
 select,
 textarea {
 	-webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    outline: none !important;
-    -webkit-border-radius:0px;
+	-moz-appearance: none;
+	appearance: none;
+	outline: none !important;
+	-webkit-border-radius:0px;
 }
 
 ::-webkit-input-placeholder {
@@ -107,7 +106,7 @@ textarea {
 }
 
 /* ================
-	  Helper Classes
+	Helper Classes
    ================ */
 
 .display-table {

@@ -1,14 +1,14 @@
 <template name="picture">
-	<div id="picture" class="container-fluid">
-		<div class="row">
-			<div class="col-xs-12">
-				{{#with picture }}
-					<img src="{{url}}" alt="{{room}}" data-ref="{{_id}}">
-					<div class="picture-likes display-table">
-						<p class="display-table-cell">{{likes}}</p>
-					</div>
-				{{/with}}
+	<div id="picture">	
+		{{#with picture }}
+			<div id="picture_likes" class="display-table">
+				<p class="display-table-cell">{{likes}}</p>
 			</div>
-		</div>
+			<div id="picture_message" class="display-table">
+				<i id="picture_message_icon" class="display-table-cell mdi-image-edit"></i>
+			</div>
+			<img src="{{url}}" class="img-responsive" alt="{{room}}" data-ref="{{_id}}">
+			{{> chat }}
+		{{/with}}
 	</div>
 </template>
