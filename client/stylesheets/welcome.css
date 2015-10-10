@@ -5,6 +5,10 @@
 	text-align: center;
 }
 
+#welcome_logo {
+	width: 160px;
+} 
+
 #welcome_enter {
 	margin-top: 40px;
 	margin-bottom: 40px;
