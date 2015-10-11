@@ -24,5 +24,6 @@ if Chatrooms.find().count() == 0
 	_.each chatrooms, (chatroom) ->
         Chatrooms.insert chatroom
 
+
 Meteor.publish 'chatrooms', ->
 	Chatrooms.find()

@@ -6,48 +6,56 @@ if Pictures.find().count() == 0
 		{
 			createdAt: new Date().toString()
 			url: '/uploads/placeholder.jpg'
+			fileId: null
 			room: 'audimax'
 			likes: 0
 		}
 		{
 			createdAt: new Date().toString()
 			url: '/uploads/placeholder.jpg'
+			fileId: null
 			room: 'audimax'
 			likes: 0
 		}
 		{
 			createdAt: new Date().toString()
 			url: '/uploads/placeholder.jpg'
+			fileId: null
 			room: 'mensa'
 			likes: 0
 		}
 		{
 			createdAt: new Date().toString()
 			url: '/uploads/placeholder.jpg'
+			fileId: null
 			room: 'mensa'
 			likes: 0
 		}
 		{
 			createdAt: new Date().toString()
 			url: '/uploads/placeholder.jpg'
+			fileId: null
 			room: 'mensa'
 			likes: 0
 		}
 		{
 			createdAt: new Date().toString()
 			url: '/uploads/placeholder.jpg'
+			fileId: null
 			room: 'aula'
 			likes: 0
 		}
 		{
 			createdAt: new Date().toString()
 			url: '/uploads/placeholder.jpg'
+			fileId: null
 			room: 'aula'
 			likes: 0
 		}
 		{
 			createdAt: new Date().toString()
 			url: '/uploads/placeholder.jpg'
+			fileId: null
 			room: 'aula'
 			likes: 0
 		}
@@ -55,6 +63,7 @@ if Pictures.find().count() == 0
 
 	_.each pictures, (picture) ->
         Pictures.insert picture
+
 
 Meteor.publish 'pictures', ->
 	Pictures.find()
