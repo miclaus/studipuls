@@ -45,7 +45,7 @@ Template.listview.helpers {
 
 Template.listview.events {
 	'click .list-chatroom-item' : ->
-		FlowRouter.go('/' + @name )
+		FlowRouter.go('/' + @name)
 		resetSearchQuery()
 
 	'keyup #search_chatrooms' : ->

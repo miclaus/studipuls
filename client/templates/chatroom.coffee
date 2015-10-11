@@ -46,7 +46,11 @@ Template.chatroom.helpers {
 
 Template.chatroom.events {
 	'click #chatroom_pictures' : (event) ->
-		pictureId = $(event.target).attr('data-ref')
-		chatroom = Session.get('chatroom')
-		FlowRouter.go('/' + chatroom + '/' + pictureId)
+        pictureId = $(event.target).attr('data-ref')
+        chatroom = Session.get('chatroom')
+        FlowRouter.go('/' + chatroom + '/' + pictureId)
+
+
+    'click #chatroom_upload_icon, tap #chatroom_upload_icon' : (event) ->
+        $('#upload_trigger').click()
 }
