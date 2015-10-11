@@ -21,7 +21,10 @@
 			<div id="list_chatroom" class="row">
 				{{#if chatrooms }}
 					{{#each chatrooms }}
-						<div class="wrapper-list-chatroom-item col-xs-6 display-table" data-ref="{{ name }}">
+						<div
+							class="wrapper-list-chatroom-item col-xs-6 display-table"
+							data-ref="{{ name }}">
+
 							<div class="list-chatroom-item display-table-cell">
 								<h1>{{ name }}</h1>
 								<div class="wrapper-chatroom-users">
@@ -30,6 +33,7 @@
 										class="list-chatroom-icon glyphicon glyphicon-user"
 										aria-hidden="true">
 									</span>
+
 									<p>{{ users }}</p>
 								</div>
 								<div class="wrapper-chatroom-moments">
@@ -38,6 +42,7 @@
 										class="list-chatroom-icon glyphicon glyphicon-camera"
 										aria-hidden="true">
 									</span>
+
 									<p>{{ moments }}</p>
 								</div>
 							</div>

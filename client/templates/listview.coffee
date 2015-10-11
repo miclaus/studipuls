@@ -4,22 +4,26 @@ searchChatrooms = ->
 	searchQuery = searchQuery  || ''
 
 	if searchQuery isnt ''
-		chatrooms = Chatrooms.find( name : { $regex : searchQuery, $options : 'i' } ).fetch()
+		chatrooms = Chatrooms.find( name : {
+			$regex 	 : searchQuery,
+			$options : 'i'
+		}).fetch()
+
 	else
 		chatrooms = Chatrooms.find().fetch()
 
-	return chatrooms
+	chatrooms
 
 
 resetSearchQuery = ->
-	Session.set('searchQuery', '')
-	$('#search_chatrooms').val('')
+	Session.set 'searchQuery', ''
+	$('#search_chatrooms').val ''
 
 
 Template.listview.rendered = ->
 	Deps.autorun ->
-		if Session.equals('hideWelcome',true)
-			$('#listview').show()
+		if Session.equals 'hideWelcome', true
+			$('#listview').fadeIn 500
 		else
 			$('#listview').hide()
 
@@ -35,7 +39,7 @@ Template.listview.helpers {
 	moments : ->
 		# TODO get moments length
 		# Pictures.find({ room : chatroom }).fetch().length
-		return "Todo"
+		return 'Todo'
 }
 
 
@@ -45,7 +49,7 @@ Template.listview.events {
 		resetSearchQuery()
 
 	'keyup #search_chatrooms' : ->
-		searchQuery = $(event.target).val()
+		searchQuery = $( event.target ).val()
 		Session.set('searchQuery', searchQuery)
 		searchChatrooms()
 }

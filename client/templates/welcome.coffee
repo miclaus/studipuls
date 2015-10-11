@@ -1,7 +1,13 @@
+$('#welcome_modal').removeClass 'animate'
+
 hideWelcome = ->
-	$('#welcome').fadeOut 'slow'
-	
-	Session.set('hideWelcome', true)
+	if ( ! $('#welcome_modal').hasClass 'animate' )
+		$('#welcome_modal').addClass 'animate'
+
+		setTimeout ->
+			Session.set 'hideWelcome', true
+		, 200
+
 
 
 Template.welcome.helpers {

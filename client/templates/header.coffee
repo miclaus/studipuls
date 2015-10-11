@@ -1,20 +1,23 @@
 Template.header.events {
 	'click #header_logo' : ->
-		Session.set('hideWelcome', false)
-		Session.set('chatroom', '')
-		Session.set('searchQuery', '')
+		Session.set 'hideWelcome', false
+		Session.set 'chatroom',    ''
+		Session.set 'searchQuery', ''
 
-		$('#search_chatrooms').val('')
+		$('#search_chatrooms').val ''
 
-		FlowRouter.go('/');
+		if ( $('#welcome_modal').hasClass 'animate' )
+			$('#welcome_modal').removeClass 'animate'
+
+		FlowRouter.go '/'
 
 
 	'click #header_list_button' : ->
-		Session.set('hideWelcome', true)
-		Session.set('chatroom', '')
-		Session.set('searchQuery', '')
+		Session.set 'hideWelcome', true
+		Session.set 'chatroom',    ''
+		Session.set 'searchQuery', ''
 
-		$('#search_chatrooms').val('')
+		$('#search_chatrooms').val ''
 
-		FlowRouter.go('/');
+		FlowRouter.go '/'
 }
