@@ -23,7 +23,7 @@ resetSearchQuery = ->
 Template.listview.rendered = ->
 	Deps.autorun ->
 		if Session.equals 'hideWelcome', true
-			$('#listview').fadeIn 500
+			$('#listview').fadeIn 300
 		else
 			$('#listview').hide()
 
