@@ -7,11 +7,14 @@ searchChatrooms = ->
 		chatrooms = Chatrooms.find( name : { $regex : searchQuery, $options : 'i' } ).fetch()
 	else
 		chatrooms = Chatrooms.find().fetch()
+
 	return chatrooms
 
+
 resetSearchQuery = ->
-	Session.set('searchQuery','')
+	Session.set('searchQuery', '')
 	$('#search_chatrooms').val('')
+
 
 Template.listview.rendered = ->
 	Deps.autorun ->
@@ -20,17 +23,21 @@ Template.listview.rendered = ->
 		else
 			$('#listview').hide()
 
+
 Template.listview.onDestroyed = ->
 	resetSearchQuery()
+
 
 Template.listview.helpers {
 	chatrooms : ->
 		searchChatrooms()
+
 	moments : ->
 		# TODO get moments length
-		# Pictures.find({room : chatroom}).fetch().length
+		# Pictures.find({ room : chatroom }).fetch().length
 		return "Todo"
 }
+
 
 Template.listview.events {
 	'click .list-chatroom-item' : ->
@@ -39,6 +46,6 @@ Template.listview.events {
 
 	'keyup #search_chatrooms' : ->
 		searchQuery = $(event.target).val()
-		Session.set('searchQuery',searchQuery)
+		Session.set('searchQuery', searchQuery)
 		searchChatrooms()
 }

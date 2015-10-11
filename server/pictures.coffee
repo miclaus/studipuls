@@ -2,8 +2,8 @@
 # Pictures.remove {}
 
 if Pictures.find().count() == 0
-	pictures = [ 
-		{ 
+	pictures = [
+		{
 			createdAt: new Date().toString()
 			url: '/uploads/placeholder.jpg'
 			room: 'audimax'
@@ -15,17 +15,17 @@ if Pictures.find().count() == 0
 			room: 'audimax'
 			likes: 0
 		}
-		{ 
+		{
 			createdAt: new Date().toString()
 			url: '/uploads/placeholder.jpg'
 			room: 'mensa'
 			likes: 0
 		}
-		{ 
+		{
 			createdAt: new Date().toString()
 			url: '/uploads/placeholder.jpg'
 			room: 'mensa'
-			likes: 0 
+			likes: 0
 		}
 		{
 			createdAt: new Date().toString()
@@ -39,13 +39,13 @@ if Pictures.find().count() == 0
 			room: 'aula'
 			likes: 0
 		}
-		{ 
+		{
 			createdAt: new Date().toString()
 			url: '/uploads/placeholder.jpg'
 			room: 'aula'
-			likes: 0 
+			likes: 0
 		}
-		{ 	
+		{
 			createdAt: new Date().toString()
 			url: '/uploads/placeholder.jpg'
 			room: 'aula'

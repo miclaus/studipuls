@@ -1,5 +1,5 @@
 <template name="listview">
-	
+
 	{{> welcome }}
 
 	<div id="listview">
@@ -21,25 +21,33 @@
 			<div id="list_chatroom" class="row">
 				{{#if chatrooms }}
 					{{#each chatrooms }}
-						<div class="wrapper-list-chatroom-item col-xs-6 display-table" data-ref="{{name}}">
+						<div class="wrapper-list-chatroom-item col-xs-6 display-table" data-ref="{{ name }}">
 							<div class="list-chatroom-item display-table-cell">
-								<h1>{{name}}</h1>
+								<h1>{{ name }}</h1>
 								<div class="wrapper-chatroom-users">
-									<span id="list_chatroom_users_icon" class="list-chatroom-icon glyphicon glyphicon-user" aria-hidden="true"></span>
-									<p>{{users}}</p>
+									<span
+										id="list_chatroom_users_icon"
+										class="list-chatroom-icon glyphicon glyphicon-user"
+										aria-hidden="true">
+									</span>
+									<p>{{ users }}</p>
 								</div>
 								<div class="wrapper-chatroom-moments">
-									<span id="list_chatroom_moments_icon" class="list-chatroom-icon glyphicon glyphicon-camera" aria-hidden="true"></span>
-									<p>{{moments}}</p>
+									<span
+										id="list_chatroom_moments_icon"
+										class="list-chatroom-icon glyphicon glyphicon-camera"
+										aria-hidden="true">
+									</span>
+									<p>{{ moments }}</p>
 								</div>
 							</div>
 						</div>
-					{{/each}}
-				{{else}}
+					{{/each }}
+				{{ else }}
 					<div id="search_no_results" sclass="col-xs-12">
 						<p>No chatrooms found.</p>
 					</div>
-				{{/if}}	
+				{{/if }}
 			</div>
 		</div>
 	</div>

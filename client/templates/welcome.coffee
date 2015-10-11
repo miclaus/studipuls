@@ -1,6 +1,8 @@
 hideWelcome = ->
 	$('#welcome').fadeOut 'slow'
-	Session.set('hideWelcome',true)
+	
+	Session.set('hideWelcome', true)
+
 
 Template.welcome.helpers {
 	room : ->
@@ -8,7 +10,8 @@ Template.welcome.helpers {
 			room = Session.get('chatroom')
 		else
 			room = 'FH St. Pölten'
-} 
+}
+
 
 Template.welcome.events {
 	'click #welcome_enter_button' : ->
