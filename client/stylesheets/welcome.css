@@ -71,7 +71,7 @@
 	position      : fixed;
 	top           : 45.5%;
 	left          : 50%;
-	margin-top    : -20px;
+	margin-top    : -40px;
 	margin-left   : -20px;
 	border-radius : 4000px;
 	z-index       : 3;
@@ -83,7 +83,7 @@
 	height      : 8000px;
 	top         : 0;
 	left        : 20;
-	margin-top  : -900px;
+	margin-top  : -880px;
 	margin-left : -4000px;
 	transition  : all .5s ease-in;
 }
