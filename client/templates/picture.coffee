@@ -22,12 +22,17 @@ Template.picture.helpers {
 
 Template.picture.events {
 	'click img' : ->
-		# TODO only one like per session
 		pictureId = Session.get 'pictureId'
 
-		Pictures.update { _id : pictureId },
-			$inc : { likes : 1 }
+		likedPictures = localStorage.getItem('likedPictures')
+		# console.log likedPictures
 
+		# TODO do not use String, but array
+		# if not _.contains(likedPictures,pictureId)
+		if likedPictures.search(pictureId) is -1
+			Pictures.update { _id : pictureId },
+				$inc : { likes : 1 }
+			saveDataToLocalStorage(pictureId)
 
 	'click #picture_message_icon' : ->
 		$('#message').focus()
