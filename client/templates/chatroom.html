@@ -22,14 +22,18 @@
 
 		<div id="chatroom_content" class="container-fluid">
 			<div id="chatroom_pictures" class="row">
-				{{#each pictures }}
-					<div class="col-xs-6">
-						<img src="{{ url }}" alt="{{ room }}" data-ref="{{ _id }}">
-						<div class="chatroom-picture-likes display-table">
-							<p class="display-table-cell">{{ likes }}</p>
+				<!-- {{#masonryContainer columnWidth=115 transitionDuration="0.1s" id="MasonryContainer" }} -->
+					{{#each pictures }}
+						<div class="col-xs-12 col-sm-6 col-md-4">
+						<!-- {{#masonryElement "MasonryContainer" }} -->
+							<img src="{{ url }}" alt="{{ room }}" data-ref="{{ _id }}">
+							<div class="chatroom-picture-likes display-table">
+								<p class="display-table-cell">{{ likes }}</p>
+							</div>
+						<!-- {{/masonryElement }} -->
 						</div>
-					</div>
-				{{/each }}
+					{{/each }}
+				<!-- {{/masonryContainer }} -->
 			</div>
 		</div>
 

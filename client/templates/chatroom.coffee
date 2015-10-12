@@ -78,7 +78,7 @@ Template.chatroom.events {
 
                 fileId = if fileObj._id then fileObj._id else null
                 console.log fileId
-                
+
                 picturesObj = {
                     createdAt: new Date().toString()
                     url: '/cfs/files/moments/' + fileId
