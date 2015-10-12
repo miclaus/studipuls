@@ -12,6 +12,10 @@ searchChatrooms = ->
 	else
 		chatrooms = Chatrooms.find().fetch()
 
+	# calculate moments count
+	_.each chatrooms, (chatroom) ->
+		chatroom.moments = Pictures.find({ room : chatroom.code }).fetch().length
+
 	chatrooms
 
 
@@ -28,15 +32,6 @@ Template.listview.rendered = ->
 		else
 			$('#listview').hide()
 
-		# update chatroom moments count
-		# chatrooms = Chatrooms.find().fetch()
-		# console.warn chatrooms
-
-		# _.each chatrooms, ( chatroom, crIx ) ->
-		# 	momentsCount = Pictures.find({ room : chatroom.code }).fetch().length
-		# 	Chatrooms.update chatroom._id,
-		# 		{ moments : momentsCount }
-
 
 Template.listview.onDestroyed = ->
 	resetSearchQuery()
@@ -45,10 +40,6 @@ Template.listview.onDestroyed = ->
 Template.listview.helpers {
 	chatrooms : ->
 		searchChatrooms()
-
-	# moments : ->
-	# 	chatroom = Session.get 'chatroom'
-	# 	Pictures.find({ room : chatroom }).fetch().length
 }
 
 
