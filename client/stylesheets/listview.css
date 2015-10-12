@@ -44,6 +44,8 @@
 .wrapper-list-chatroom-item {
 	padding: 0;
 	padding-bottom: 6px;
+	padding-left: 3px;
+	padding-right: 3px;
 }
 
 .wrapper-list-chatroom-item::before {
@@ -57,13 +59,13 @@
 	background: #a11d3c;
 }
 
-.wrapper-list-chatroom-item:nth-child(odd) {
+/* .wrapper-list-chatroom-item:nth-child(odd) {
 	padding-right: 3px;
 }
 
 .wrapper-list-chatroom-item:nth-child(even) {
 	padding-left: 3px;
-}
+} */
 
 .list-chatroom-item {
 	position: absolute;

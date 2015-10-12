@@ -54,21 +54,26 @@
 #chatroom_pictures > div {
 	padding: 0;
 	padding-bottom: 6px;
+	padding-left: 3px;
+	padding-right: 3px;
 }
 
-#chatroom_pictures > div:nth-child(odd) {
+/* #chatroom_pictures > div:nth-child(odd) {
 	padding-right: 3px;
 }
 
 #chatroom_pictures > div:nth-child(even) {
 	padding-left: 3px;
-}
+} */
 
 #chatroom_pictures img {
 	width: 100%;
 	-webkit-filter: grayscale(100%);
 	filter: grayscale(100%);
 	cursor: pointer;
+}
+#chatroom_pictures img:hover {
+	-webkit-filter: grayscale(0%);
 }
 
 .chatroom-picture-likes {

@@ -17,7 +17,7 @@ window.addEventListener 'pagehide', (e) ->
 
 
 Template.chatroom.rendered = ->
-	Deps.autorun ->
+	Tracker.autorun ->
 		if Session.equals 'hideWelcome', true
 			$('#chatroom').fadeIn 300
 		else
@@ -25,8 +25,11 @@ Template.chatroom.rendered = ->
 
 
 Template.chatroom.helpers {
+    canUpload : ->
+        Accounts.user() isnt null
+
 	room : ->
-		Session.get 'chatroom'
+		Session.get 'chatroomName'
 
 	users : ->
 		chatroom = Session.get 'chatroom'
@@ -40,17 +43,12 @@ Template.chatroom.helpers {
 
 	pictures : ->
 		chatroom = Session.get 'chatroom'
-
-		Pictures.find({
-            room : chatroom
-        }, {
-            sort : { createdAt : -1 }
-        }).fetch()
+		Pictures.find({ room : chatroom }, { sort : { createdAt : -1 } }).fetch();
 }
 
 
 Template.chatroom.events {
-	'click #chatroom_pictures' : (event) ->
+	'click #chatroom_pictures, tap #chatroom_pictures' : ->
         chatroom   = Session.get 'chatroom'
         pictureId  = $( event.target ).attr 'data-ref'
         pictureUrl = '/' + chatroom + '/' + pictureId
@@ -58,7 +56,7 @@ Template.chatroom.events {
         FlowRouter.go pictureUrl
 
 
-    'click #chatroom_upload_icon, tap #chatroom_upload_icon' : (event) ->
+    'click #chatroom_upload_icon, tap #chatroom_upload_icon' : ->
         $('.upload-trigger').click()
 
 
@@ -88,9 +86,8 @@ Template.chatroom.events {
                 }
 
                 Pictures.insert picturesObj, (picturesErr, pictureObjId) ->
-                    setTimeout ->
-                        FlowRouter.reload()
-                    , 2000
+                    console.warn 'picture insert callback : ';
+                    console.info pictureObjId
 
 
                 $('.upload-trigger').val ''

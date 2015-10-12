@@ -1,10 +1,11 @@
 <template name="chatroom">
 
-	{{> welcome}}
+	{{> welcome }}
 
 	<div id="chatroom">
 		<div id="chatroom_info">
 			<h1>{{ room }}</h1>
+
 			<p>{{ users }}</p>
 			<span
 				id="chatroom_users_icon"
@@ -24,7 +25,7 @@
 			<div id="chatroom_pictures" class="row">
 				<!-- {{#masonryContainer columnWidth=115 transitionDuration="0.1s" id="MasonryContainer" }} -->
 					{{#each pictures }}
-						<div class="col-xs-12 col-sm-6 col-md-4">
+						<div class="col-xs-12 col-sm-6 col-md-4 display-table">
 						<!-- {{#masonryElement "MasonryContainer" }} -->
 							<img src="{{ url }}" alt="{{ room }}" data-ref="{{ _id }}">
 							<div class="chatroom-picture-likes display-table">
@@ -37,22 +38,24 @@
 			</div>
 		</div>
 
-		<div id="chatroom_upload">
-			<div id="chatroom_upload_circle_one">
-				<div id="chatroom_upload_circle_two">
-					<div id="chatroom_upload_button" class="display-table">
-						<i id="chatroom_upload_icon"
-							class="display-table-cell mdi-content-add">
-						</i>
+		{{#if canUpload }}
+			<div id="chatroom_upload">
+				<div id="chatroom_upload_circle_one">
+					<div id="chatroom_upload_circle_two">
+						<div id="chatroom_upload_button" class="display-table">
+							<i id="chatroom_upload_icon"
+								class="display-table-cell mdi-content-add">
+							</i>
+						</div>
 					</div>
 				</div>
-			</div>
 
-			<input
-				class="upload-trigger"
-				type="file"
-				name="upload-trigger"
-				accept="image/*">
-		</div>
+				<input
+					class="upload-trigger"
+					type="file"
+					name="upload-trigger"
+					accept="image/*">
+			</div>
+		{{/if }}
 	</div>
 </template>

@@ -12,8 +12,8 @@ hideWelcome = ->
 
 Template.welcome.helpers {
 	room : ->
-		if Session.get('chatroom')
-			room = Session.get('chatroom')
+		if Session.get 'chatroomName'
+			room = Session.get 'chatroomName'
 		else
 			room = 'FH St. Pölten'
 }

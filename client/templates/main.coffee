@@ -8,11 +8,11 @@ Template.main.rendered = ->
 			$('#header_list_button').show()
 
 
-		if Session.equals('hideWelcome', true)
+		if Session.equals 'hideWelcome', true
 			$('#welcome').hide()
 			$('#header').show()
-			$('body').css('height', 'auto')
+			$('body').css 'height', 'auto'
 		else
 			$('#header').hide()
 			$('#welcome').show()
-			$('body').css('height', '100%')
+			$('body').css 'height', '100%'
