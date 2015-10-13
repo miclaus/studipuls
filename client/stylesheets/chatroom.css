@@ -72,6 +72,10 @@
 	-webkit-filter: grayscale(100%);
 	filter: grayscale(100%);
 	cursor: pointer;
+
+	-webkit-border-radius : 4px;
+	-moz-border-radius    : 4px;
+	border-radius         : 4px;
 }
 #chatroom_pictures img:hover {
 	-webkit-filter: grayscale(0%);
@@ -80,8 +84,8 @@
 .chatroom-picture-likes
 {
 	position: absolute;
-	top   : 1em;
-	right : 1em;
+	top  : 1em;
+	left : 1em;
 
 	width: 50px;
 	height: 50px;
@@ -105,7 +109,7 @@
 
 #chatroom_upload {
 	position: fixed;
-	bottom: 15px;
+	bottom: 1.2em;
 	width: 96%;
 	margin: 0 auto;
 }

@@ -1,6 +1,6 @@
 <template name="picture">
-	<div id="picture">
-		{{#with picture }}
+	{{#with picture }}
+		<div id="picture">
 			<div id="picture_likes" class="display-table">
 				<p class="display-table-cell">{{ likes }}</p>
 			</div>
@@ -18,6 +18,6 @@
 				data-ref="{{ _id }}">
 
 			{{> chat }}
-		{{/with }}
-	</div>
+		</div>
+	{{/with }}
 </template>
