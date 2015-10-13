@@ -34,7 +34,7 @@ Template.chatroom.helpers {
 	users : ->
 		chatroom = Session.get 'chatroom'
 
-		Chatrooms.findOne({ code : chatroom }).users
+		UserData.find({ room : chatroom }).fetch().length
 
 	moments : ->
 		chatroom = Session.get 'chatroom'

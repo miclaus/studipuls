@@ -16,9 +16,10 @@
 	top: 50px;
 	left: 0;
 	width: 100%;
-	padding: 20px 5% 20px 5%;
+	padding: 1em;
+	padding-top : 1.8em;
 
-	background: #fff;
+	background: white;
 	z-index: 1;
 }
 
