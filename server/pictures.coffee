@@ -1,5 +1,5 @@
 # NOTE dev only
-# Pictures.remove {}
+#Pictures.remove {}
 
 if Pictures.find().count() == 0
 	pictures = [

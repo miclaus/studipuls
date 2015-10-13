@@ -2,8 +2,8 @@
 hotcodepush = false
 
 Meteor._reload.onMigrate ->
-  hotcodepush = true
-  [ true ]
+    hotcodepush = true
+    [ true ]
 
 
 window.addEventListener 'pagehide', (e) ->
@@ -12,43 +12,38 @@ window.addEventListener 'pagehide', (e) ->
         chatroomId = Chatrooms.findOne({ name : chatroom })._id
 
         Chatrooms.update { _id : chatroomId }, $inc : { users : -1 }
+    # return
 
-    return
 
+### onRendered ###
 
-Template.chatroom.rendered = ->
-	Tracker.autorun ->
-		if Session.equals 'hideWelcome', true
-			$('#chatroom').fadeIn 300
-		else
-			$('#chatroom').hide()
+Template.chatroom.onRendered ->
+    Tracker.autorun ->
+        $('#chatroom').fadeIn 300 if Session.equals 'hideWelcome', true
+        $('#chatroom').hide 0 if Session.equals 'hideWelcome', false
+# end
 
+### helpers ###
 
 Template.chatroom.helpers {
-    canUpload : ->
+    canUpload: ->
         Accounts.user() isnt null
-
-	room : ->
+	room: ->
 		Session.get 'chatroomName'
-
-	users : ->
+	users: ->
 		chatroom = Session.get 'chatroom'
-
 		UserData.find({ room : chatroom }).fetch().length
-
-	moments : ->
+	moments: ->
 		chatroom = Session.get 'chatroom'
-
 		Pictures.find({ room : chatroom }).fetch().length
-
-	pictures : ->
+	pictures: ->
 		chatroom = Session.get 'chatroom'
-		Pictures.find({ room : chatroom }, { sort : { createdAt : -1 } }).fetch();
+		Pictures.find({ room : chatroom }, { sort : { createdAt : -1 } }).fetch()
 }
 
 
-Template.chatroom.events {
-	'click #chatroom_pictures, tap #chatroom_pictures' : ->
+Template.chatroom.events
+	'click #chatroom_pictures, tap #chatroom_pictures': ->
         chatroom   = Session.get 'chatroom'
         pictureId  = $( event.target ).attr 'data-ref'
         pictureUrl = '/' + chatroom + '/' + pictureId
@@ -56,39 +51,37 @@ Template.chatroom.events {
         FlowRouter.go pictureUrl
 
 
-    'click #chatroom_upload_icon, tap #chatroom_upload_icon' : ->
+    'click #chatroom_upload_icon, tap #chatroom_upload_icon': ->
         $('.upload-trigger').click()
 
 
-    'change .upload-trigger' : (event, template) ->
+    'change .upload-trigger': (event, template) ->
         FS.Utility.eachFile event, (file) ->
-            # console.warn 'upload trigger FILE :'
-            # console.info file
-
             chatroom  = Session.get 'chatroom'
             pictureId = Session.get 'pictureId'
 
-            # Meteor.call 'uploadPictureFile', file, chatroom, pictureId
-
-            # Inserted new doc with ID fileObj._id, and kicked off the data upload using HTTP
             PicturesFiles.insert file, (err, fileObj) ->
-                console.warn fileObj
+                # console.warn fileObj
 
                 fileId = if fileObj._id then fileObj._id else null
-                console.log fileId
+                fileCursor = PicturesFiles.find fileId
 
-                picturesObj = {
-                    createdAt: new Date().toString()
-                    url: '/cfs/files/moments/' + fileId
-                    fileId: fileId
-                    room: chatroom
-                    likes: 0
+                liveFileQuery = fileCursor.observe {
+                    changed: (newFile, oldFile) ->
+                        if newFile.isUploaded
+                            liveFileQuery.stop()
+
+                            picturesObj = {
+                                createdAt: new Date().toString()
+                                url: '/cfs/files/moments/' + fileId
+                                fileId: fileId
+                                room: chatroom
+                                likes: 0
+                            }
+
+                            Pictures.insert picturesObj, (picturesErr, pictureObjId) ->
+                                console.warn 'picture inserted callback';
+                                console.info pictureObjId
                 }
 
-                Pictures.insert picturesObj, (picturesErr, pictureObjId) ->
-                    console.warn 'picture insert callback : ';
-                    console.info pictureObjId
-
-
                 $('.upload-trigger').val ''
-}

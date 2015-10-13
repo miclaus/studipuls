@@ -1,3 +1,6 @@
+#UserData.remove {}
+
+
 Meteor.publish 'userdata', ->
 	UserData.find()
 
