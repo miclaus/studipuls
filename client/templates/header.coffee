@@ -12,6 +12,9 @@ Template.header.events {
 		FlowRouter.go '/'
 
 
+	'click #header_chatroom_button' : ->
+		history.back()
+
 	'click #header_list_button' : ->
 		Session.set 'hideWelcome', true
 		Session.set 'chatroom',    ''

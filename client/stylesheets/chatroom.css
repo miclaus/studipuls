@@ -81,6 +81,14 @@
 	-webkit-filter: grayscale(0%);
 }
 
+#chatroom_pictures_message
+{
+	font-size   : 1.4em;
+	text-align  : center;
+	padding-top : 5em;
+	color       : #aaa;
+}
+
 .chatroom-picture-likes
 {
 	position: absolute;
