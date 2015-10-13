@@ -24,3 +24,8 @@ imageStore = new FS.Store.GridFS('original')
 # _id, name, users
 
 @Chatrooms = new Meteor.Collection('chatrooms')
+
+# UserData
+# _id, userId, currentRoom
+
+@UserData = new Meteor.Collection('userdata')

@@ -15,6 +15,10 @@ FlowRouter.route '/',
             top  : 'header'
             main : 'listview'
 
+    triggersEnter : [ (params, queryParams) ->
+        Meteor.call 'updateUserRoom', null
+    ]
+
 
 ### Chatroom View ###
 
@@ -42,28 +46,10 @@ FlowRouter.route '/:chatroom',
             console.error 'show 404'
 
 
-    # track active users
-    triggersEnter: [ (context, redirect) ->
+    triggersEnter : [ (context, redirect) ->
         # console.warn 'route "chatroom" triggersEnter :'
-        # console.info Accounts.user()
-        # console.info Accounts.userId()
 
-        chatroomId = Chatrooms.findOne({ code : context.params.chatroom })._id
-
-        Chatrooms.update { _id : chatroomId },
-            $inc: { users : 1 }
-    ]
-
-
-    triggersExit: [ (context, redirect) ->
-        # console.warn 'route "chatroom" triggersExit :'
-        # console.info Accounts.user()
-        # console.info Accounts.userId()
-
-        chatroomId = Chatrooms.findOne({ code : context.params.chatroom })._id
-
-        Chatrooms.update { _id : chatroomId },
-            $inc: { users : -1 }
+        Meteor.call 'updateUserRoom', context.params.chatroom
     ]
 
 
@@ -80,6 +66,11 @@ FlowRouter.route '/:chatroom/:pictureId',
         BlazeLayout.render 'main',
             top  : 'header'
             main : 'picture'
+
+
+    triggersEnter : [ (context, redirect) ->
+        Meteor.call 'updateUserRoom', context.params.chatroom
+    ]
 
 
 ### 404 ###

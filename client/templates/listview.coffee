@@ -12,8 +12,9 @@ searchChatrooms = ->
 	else
 		chatrooms = Chatrooms.find().fetch()
 
-	# calculate moments count
+	# calculate users and moments count
 	_.each chatrooms, (chatroom) ->
+		chatroom.users   = UserData.find({ room : chatroom.code }).fetch().length
 		chatroom.moments = Pictures.find({ room : chatroom.code }).fetch().length
 
 	chatrooms
