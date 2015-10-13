@@ -59,6 +59,12 @@
 	padding-right: 3px;
 }
 
+.chatroom-image {
+	margin-bottom: 1.5em;
+	margin-left : 0;
+	margin-right : 0;
+}
+
 /* #chatroom_pictures > div:nth-child(odd) {
 	padding-right: 3px;
 }

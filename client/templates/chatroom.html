@@ -23,26 +23,28 @@
 		</div>
 
 		<div id="chatroom_content" class="container-fluid">
-			<div id="chatroom_pictures" class="row">
-				<!-- {{#masonryContainer columnWidth=115 transitionDuration="0.1s" id="MasonryContainer" }} -->
-					{{#each pictures }}
-						<div class="col-xs-12 col-sm-6 col-md-4 display-table">
-						<!-- {{#masonryElement "MasonryContainer" }} -->
-							<img src="{{ url }}" alt="{{ room }}" data-ref="{{ _id }}">
-							<div class="chatroom-picture-likes display-table">
-								<p class="display-table-cell">{{ likes }}</p>
+			<!-- {{#HammerTouchArea gestureMap=chatroomGestures}} -->
+				<div id="chatroom_pictures" class="row">
+					<!-- {{#masonryContainer columnWidth=115 transitionDuration="0.1s" id="MasonryContainer" }} -->
+						{{#each pictures }}
+							<div class="chatroom-image col-xs-12 col-sm-6 col-md-4 display-table">
+							<!-- {{#masonryElement "MasonryContainer" }} -->
+								<img src="{{ url }}" alt="{{ room }}" data-ref="{{ _id }}">
+								<div class="chatroom-picture-likes display-table">
+									<p class="display-table-cell">{{ likes }}</p>
+								</div>
+							<!-- {{/masonryElement }} -->
 							</div>
-						<!-- {{/masonryElement }} -->
-						</div>
-					{{/each }}
-				<!-- {{/masonryContainer }} -->
+						{{/each }}
+					<!-- {{/masonryContainer }} -->
 
-				{{#unless pictures }}
-					<p id="chatroom_pictures_message">
-						Be the first to share live moments !
-					</p>
-				{{/unless }}
-			</div>
+					{{#unless pictures }}
+						<p id="chatroom_pictures_message">
+							Be the first to share live moments !
+						</p>
+					{{/unless }}
+				</div>
+			<!-- {{/HammerTouchArea}} -->
 		</div>
 
 		{{#if canUpload }}

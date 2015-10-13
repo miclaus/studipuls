@@ -25,9 +25,3 @@ if Chatrooms.find().count() == 0
 
 Meteor.publish 'chatrooms', ->
 	Chatrooms.find()
-
-
-Meteor.methods {
-	updateUserRoom : (chatroom) ->
-		UserData.upsert @userId, { room : chatroom }
-}

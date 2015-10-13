@@ -26,6 +26,9 @@ Template.chatroom.onRendered ->
 ### helpers ###
 
 Template.chatroom.helpers {
+    # chatroomGestures: ->
+    #     'doubletap .chatroom-image': (event, templateInstance) ->
+    #         console.warn event.center.x + ' - ' + event.center.y
     canUpload: ->
         Accounts.user() isnt null
 	room: ->

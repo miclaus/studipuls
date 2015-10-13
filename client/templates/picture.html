@@ -1,23 +1,25 @@
 <template name="picture">
-	{{#with picture }}
-		<div id="picture">
-			<div id="picture_likes" class="display-table">
-				<p class="display-table-cell">{{ likes }}</p>
+	{{#HammerTouchArea gestureMap=pictureGestures}}
+		{{#with picture }}
+			<div id="picture">
+				<div id="picture_likes" class="display-table">
+					<p class="display-table-cell">{{ likes }}</p>
+				</div>
+
+				<div id="picture_message" class="display-table">
+					<i id="picture_message_icon"
+						class="display-table-cell mdi-communication-comment">
+					</i>
+				</div>
+
+				<img
+					src="{{ url }}"
+					class="picture-image img-responsive"
+					alt="{{ room }}"
+					data-ref="{{ _id }}">
+
+				{{> chat }}
 			</div>
-
-			<div id="picture_message" class="display-table">
-				<i id="picture_message_icon"
-					class="display-table-cell mdi-communication-comment">
-				</i>
-			</div>
-
-			<img
-				src="{{ url }}"
-				class="img-responsive"
-				alt="{{ room }}"
-				data-ref="{{ _id }}">
-
-			{{> chat }}
-		</div>
-	{{/with }}
+		{{/with }}
+	{{/HammerTouchArea}}
 </template>

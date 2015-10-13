@@ -1,21 +1,23 @@
 Template.header.events {
-	'click #header_logo' : ->
-		Session.set 'hideWelcome', false
-		Session.set 'chatroom',    ''
-		Session.set 'searchQuery', ''
+	'click #header_logo': ->
+		Session.set 'hideWelcome',  false
+		Session.set 'chatroom',     ''
+		Session.set 'chatroomName', ''
+		Session.set 'searchQuery',  ''
 
 		$('#search_chatrooms').val ''
 
-		if ( $('#welcome_modal').hasClass 'animate' )
+		if $('#welcome_modal').hasClass 'animate'
 			$('#welcome_modal').removeClass 'animate'
 
 		FlowRouter.go '/'
 
 
-	'click #header_chatroom_button' : ->
+	'click #header_chatroom_button': ->
 		history.back()
 
-	'click #header_list_button' : ->
+
+	'click #header_list_button': ->
 		Session.set 'hideWelcome', true
 		Session.set 'chatroom',    ''
 		Session.set 'searchQuery', ''

@@ -29,3 +29,6 @@ imageStore = new FS.Store.GridFS('original')
 # _id, userId, currentRoom
 
 @UserData = new Meteor.Collection('userdata')
+
+
+@Likes = new Meteor.Collection('likes')
