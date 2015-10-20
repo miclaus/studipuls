@@ -14,13 +14,16 @@ window.addEventListener 'pagehide', (e) ->
         Chatrooms.update { _id : chatroomId }, $inc : { users : -1 }
     # return
 
-
 ### onRendered ###
 
 Template.chatroom.onRendered ->
     Tracker.autorun ->
         $('#chatroom').fadeIn 300 if Session.equals 'hideWelcome', true
         $('#chatroom').hide 0 if Session.equals 'hideWelcome', false
+        # clean UserData collection
+        Meteor.call 'clearUserData', (error, response) ->
+            console.error error if error
+            console.warn response
 # end
 
 ### helpers ###
@@ -83,7 +86,7 @@ Template.chatroom.events
                             }
 
                             Pictures.insert picturesObj, (picturesErr, pictureObjId) ->
-                                console.warn 'picture inserted callback';
+                                console.warn 'picture inserted callback'
                                 console.info pictureObjId
                 }
 

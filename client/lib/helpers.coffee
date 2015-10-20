@@ -27,8 +27,8 @@ thumbnail = (base64, maxWidth, maxHeight) ->
 	copyContext.drawImage img, 0, 0
 
 	# Copy and resize second canvas to first canvas
-	canvas.width = img.width * ratio;
-	canvas.height = img.height * ratio;
+	canvas.width = img.width * ratio
+	canvas.height = img.height * ratio
 	ctx.drawImage( canvasCopy, 0, 0, canvasCopy.width, canvasCopy.height, 0, 0, canvas.width, canvas.height )
 
 	# return
