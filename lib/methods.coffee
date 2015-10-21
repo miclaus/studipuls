@@ -44,11 +44,8 @@ Meteor.methods
 			console.warn result
 
 	clearUserData: ->
-		loggedInUsers = Meteor.users.find().fetch()
 		usersData = UserData.find().fetch()
-		# NOTE - adapted from http://stackoverflow.com/a/24965133/2035807
-		removeUserData = _.select loggedInUsers, (user) ->
-			console.warn user
-			! _.findWhere usersData, {_id: user._id}
-
-		console.warn removeUserData
+		loggedInUsers = Meteor.users.find().fetch()
+		_.select usersData, (userData) ->
+			unusedUserData = ! _.findWhere loggedInUsers, {_id: userData._id}
+			UserData.remove userData._id if unusedUserData

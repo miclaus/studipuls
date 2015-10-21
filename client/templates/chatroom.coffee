@@ -20,10 +20,9 @@ Template.chatroom.onRendered ->
     Tracker.autorun ->
         $('#chatroom').fadeIn 300 if Session.equals 'hideWelcome', true
         $('#chatroom').hide 0 if Session.equals 'hideWelcome', false
-        # clean UserData collection
-        Meteor.call 'clearUserData', (error, response) ->
-            console.error error if error
-            console.warn response
+        # TODO - find more performant way to do this !
+        # NOTE - this is highly unperformant !
+        Meteor.call 'clearUserData'
 # end
 
 ### helpers ###
