@@ -62,33 +62,39 @@ Template.chatroom.events
 
 
     'change .upload-trigger': (event, template) ->
+        console.warn 'change .upload-trigger :'
         FS.Utility.eachFile event, (file) ->
             chatroom  = Session.get 'chatroom'
             pictureId = Session.get 'pictureId'
 
-            PicturesFiles.insert file, (err, fileObj) ->
-                # console.warn fileObj
+            options =
+                width: 640,
+                height: 640,
+                cropSquare: true
 
-                fileId = if fileObj._id then fileObj._id else null
-                fileCursor = PicturesFiles.find fileId
+            Resizer.resize file, options, (err, file) ->
+                PicturesFiles.insert file, (err, fileObj) ->
+                    # console.warn fileObj
+                    fileId = if fileObj._id then fileObj._id else null
+                    fileCursor = PicturesFiles.find fileId
 
-                liveFileQuery = fileCursor.observe {
-                    changed: (newFile, oldFile) ->
-                        if newFile.isUploaded
-                            liveFileQuery.stop()
+                    liveFileQuery = fileCursor.observe {
+                        changed: (newFile, oldFile) ->
+                            if newFile.isUploaded
+                                liveFileQuery.stop()
 
-                            picturesObj = {
-                                createdAt: new Date().toString()
-                                url: '/cfs/files/moments/' + fileId
-                                fileId: fileId
-                                room: chatroom
-                                likes: 0
-                            }
+                                picturesObj = {
+                                    createdAt: new Date().toString()
+                                    url: '/cfs/files/moments/' + fileId
+                                    fileId: fileId
+                                    room: chatroom
+                                    likes: 0
+                                }
 
-                            Pictures.insert picturesObj, (picturesErr, pictureObjId) ->
-                                console.warn 'picture inserted callback'
-                                console.info pictureObjId
-                                $('.chatroom-image img').unveil()
-                }
+                                Pictures.insert picturesObj, (picturesErr, pictureObjId) ->
+                                    console.warn 'picture inserted callback'
+                                    console.info pictureObjId
+                                    $('.chatroom-image img').unveil()
+                    }
 
-                $('.upload-trigger').val ''
+                    $('.upload-trigger').val ''

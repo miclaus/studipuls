@@ -10,7 +10,7 @@
 imageStore = new FS.Store.GridFS('original')
 
 @PicturesFiles = new FS.Collection('moments',
-	stores : [ imageStore ]
+	stores: [imageStore]
 )
 
 
