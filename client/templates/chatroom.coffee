@@ -20,6 +20,7 @@ Template.chatroom.onRendered ->
     Tracker.autorun ->
         $('#chatroom').fadeIn 300 if Session.equals 'hideWelcome', true
         $('#chatroom').hide 0 if Session.equals 'hideWelcome', false
+        $('.chatroom-image img').unveil()
         # TODO - find more performant way to do this !
         # NOTE - this is highly unperformant !
         Meteor.call 'clearUserData'
@@ -87,6 +88,7 @@ Template.chatroom.events
                             Pictures.insert picturesObj, (picturesErr, pictureObjId) ->
                                 console.warn 'picture inserted callback'
                                 console.info pictureObjId
+                                $('.chatroom-image img').unveil()
                 }
 
                 $('.upload-trigger').val ''
