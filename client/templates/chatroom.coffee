@@ -75,7 +75,7 @@ Template.chatroom.events
             Resizer.resize file, options, (err, file) ->
                 data = processImage file, (data) ->
                     orientedFile = new FS.File data
-                    
+
                     PicturesFiles.insert orientedFile, (err, fileObj) ->
                         # console.warn fileObj
                         fileId = if fileObj._id then fileObj._id else null
