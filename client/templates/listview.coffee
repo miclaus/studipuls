@@ -14,8 +14,12 @@ searchChatrooms = ->
 
 	# calculate users and moments count
 	_.each chatrooms, (chatroom) ->
-		chatroom.users   = UserData.find({ room : chatroom.code }).fetch().length
-		chatroom.moments = Pictures.find({ room : chatroom.code }).fetch().length
+		roomPictures = Pictures.find({ room : chatroom.code }).fetch();
+		chatroom.users = UserData.find({ room : chatroom.code }).fetch().length
+		chatroom.moments = roomPictures.length
+		# get most loved moment
+		mostLovedMoment = _.max roomPictures, (picture) -> picture.likes
+		chatroom.thumb = if mostLovedMoment then mostLovedMoment.url else ''
 
 	chatrooms
 

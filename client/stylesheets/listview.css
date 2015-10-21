@@ -46,12 +46,13 @@
 	padding-bottom: 6px;
 	padding-left: 3px;
 	padding-right: 3px;
+
 }
 
 .wrapper-list-chatroom-item::before {
-	content: "";
+	content: '';
 	display: block;
-	background: #333;
+	background: rgba(110, 20, 41, 0.6);
 	padding-top: 100%; 	/* ratio of 1:1 */
 
 	-webkit-border-radius : 4px;
