@@ -44,13 +44,15 @@ Template.listview.helpers {
 }
 
 
-Template.listview.events {
-	'click .list-chatroom-item' : ->
+Template.listview.events
+	'click .list-chatroom-item': ->
 		FlowRouter.go('/' + @code)
 		resetSearchQuery()
 
-	'keyup #search_chatrooms' : ->
+	'focus #search_chatrooms': (event) ->
+		$(event.target).keypress()
+
+	'keyup #search_chatrooms': ->
 		searchQuery = $( event.target ).val()
 		Session.set 'searchQuery', searchQuery
 		searchChatrooms()
-}

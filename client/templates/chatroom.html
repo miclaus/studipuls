@@ -24,10 +24,10 @@
 
 		<div id="chatroom_content" class="container-fluid">
 			<!-- {{#HammerTouchArea gestureMap=chatroomGestures}} -->
-				<div id="chatroom_pictures" class="row">
+				<div id="chatroom_pictures" class="column">
 					<!-- {{#masonryContainer columnWidth=115 transitionDuration="0.1s" id="MasonryContainer" }} -->
 						{{#each pictures }}
-							<div class="chatroom-image col-xs-12 col-sm-6 col-md-4 display-table">
+							<div class="chatroom-image col-xs-4 col-sm-4 col-md-4 display-table">
 							<!-- {{#masonryElement "MasonryContainer" }} -->
 								<img src="{{ url }}" alt="{{ room }}" data-ref="{{ _id }}">
 								<div class="chatroom-picture-likes display-table">

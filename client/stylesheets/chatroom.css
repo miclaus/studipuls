@@ -75,8 +75,8 @@
 
 #chatroom_pictures img {
 	width: 100%;
-	-webkit-filter: grayscale(100%);
-	filter: grayscale(100%);
+	/* -webkit-filter: grayscale(100%);
+	filter: grayscale(100%); */
 	cursor: pointer;
 
 	-webkit-border-radius : 4px;
@@ -98,19 +98,27 @@
 .chatroom-picture-likes
 {
 	position: absolute;
-	top  : 1em;
-	left : 1em;
+	/* top  : 1em;
+	left : 1em; */
+	bottom : 0.4em;
+	left : 0.6em;
 
-	width: 50px;
-	height: 50px;
+	width: 42px;
+	height : 42px;
+
+	padding-bottom: 14px;
+	padding-right: 12px;
 
 	font-family: 'dosissemibold', 'Helvetica Neue', Arial, sans-serif;
-	font-size: 1.5em;
+	font-size: 1em;
 	text-align: center;
-	background: #a11d3c;
-	border-radius: 50%;
+	/* background: #a11d3c; */
+	background: url('/img/heart_low_heat.png') no-repeat;
+	/* border-radius: 50%; */
+	/* border-left-radius : 10px;
+	border-right-radius : 10px; */
 
-	box-shadow : 0 4px 2px 0 rgba(0,0,0,.2), 0 3px 5px 0 rgba(0,0,0,.19);
+	/* box-shadow : 0 4px 2px 0 rgba(0,0,0,.2), 0 3px 5px 0 rgba(0,0,0,.19); */
 }
 
 /* #chatroom_pictures > div:nth-child(odd) > .chatroom-picture-likes {
