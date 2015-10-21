@@ -21,11 +21,18 @@
 			<div id="list_chatroom" class="row">
 				{{#if chatrooms }}
 					{{#each chatrooms }}
-						<div
+						<!-- <div
 							class="wrapper-list-chatroom-item col-xs-4 col-sm-4 col-md-3 display-table"
 							style="	background : url('{{ thumb }}') no-repeat center center;
 									background-size : 100%;"
+							data-ref="{{ name }}"> -->
+						<div
+							class="wrapper-list-chatroom-item col-xs-4 col-sm-4 col-md-3 display-table"
 							data-ref="{{ name }}">
+
+							{{#if thumb }}
+								<img class="chatroom-item-thumbnail" src="{{ thumb }}">
+							{{/if }}
 
 							<div class="list-chatroom-item display-table-cell">
 								<h1>{{ name }}</h1>
