@@ -44,9 +44,10 @@
 .wrapper-list-chatroom-item {
 	padding: 0;
 	margin-bottom: 6px;
-	margin-left: 3px;
-	margin-right: 3px;
-
+	/* margin-left: 3px;
+	margin-right: 3px; */
+	padding-left: 3px;
+	padding-right: 3px;
 }
 
 .wrapper-list-chatroom-item::before {
