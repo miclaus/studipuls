@@ -3,7 +3,7 @@ Meteor.methods
 		check [ message, pictureId ], [ String ]
 
 		Comments.insert
-			createdAt : moment().format('LLL');
+			createdAt : new Date().toString()
 			message   : message
 			pictureId : pictureId
 
