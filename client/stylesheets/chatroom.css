@@ -113,7 +113,9 @@
 	font-size: 1em;
 	text-align: center;
 	/* background: #a11d3c; */
-	background: url('/img/heart_low_heat.png') no-repeat;
+	background: url('/img/heart.png') no-repeat;
+	background-size: contain;
+	background-origin: content-box;
 	/* border-radius: 50%; */
 	/* border-left-radius : 10px;
 	border-right-radius : 10px; */

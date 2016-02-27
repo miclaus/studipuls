@@ -1,7 +1,6 @@
 #wrapper_message {
 	width: 80%;
 	height: 70px;
-	background: #fff;
 	padding-top: 14px;
 	margin-left: 3%;
 	margin-top: 15px;
@@ -9,7 +8,6 @@
 
 #wrapper_message > .input-group-addon {
 	float: left;
-	background: #fff;
 	border: none;
 }
 
@@ -19,7 +17,7 @@
 }
 
 #wrapper_message > .input-group {
-	width: 80%;
+	width: 90%;
 }
 
 #message

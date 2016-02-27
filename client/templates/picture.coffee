@@ -13,7 +13,7 @@ Template.picture.helpers {
 	pictureGestures: {
         'doubletap .picture-image': (event, templateInstance) -> likeMoment(event)
 	}
-	
+
 	picture: ->
 		pictureId = Session.get 'pictureId'
 		Pictures.findOne({ _id : pictureId })
@@ -24,7 +24,7 @@ Template.picture.helpers {
 
 
 Template.picture.events {
-	'click img' : ->
+	'click img, click #picture_likes' : ->
 		pictureId = Session.get 'pictureId'
 		likedPictures = localStorage.getItem('likedPictures')
 		# console.log likedPictures
