@@ -25,7 +25,8 @@
 }
 
 #header_chatroom_button,
-#header_list_button
+#header_list_button,
+#header_search_button
 {
 	position  : fixed;
 	top       : 0.53em;
@@ -35,6 +36,7 @@
 #header_chatroom_button {
 	left  : 0.7em
 }
-#header_list_button {
+#header_list_button,
+#header_search_button {
 	right : 0.7em
 }

@@ -12,8 +12,10 @@ Template.main.rendered = ->
 		# right header control
 		if FlowRouter.current().path is '/'
 			$('#header_list_button').hide()
+			$('#header_search_button').show()
 		else
 			$('#header_list_button').show()
+			$('#header_search_button').hide()
 
 
 		# welcome modal

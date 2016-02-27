@@ -25,4 +25,7 @@ Template.header.events {
 		$('#search_chatrooms').val ''
 
 		FlowRouter.go '/'
+
+	'click #header_search_button': ->
+		$('#wrapper_search').slideToggle()
 }
