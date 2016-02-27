@@ -14,6 +14,12 @@ window.addEventListener 'pagehide', (e) ->
         Chatrooms.update { _id : chatroomId }, $inc : { users : -1 }
     # return
 
+Template.chatroom.onCreated ->
+	self = this
+	self.autorun ->
+		self.subscribe 'chatroomPictures', Session.get 'chatroom'
+		self.subscribe 'userdata'
+
 ### onRendered ###
 
 Template.chatroom.onRendered ->

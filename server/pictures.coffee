@@ -18,3 +18,7 @@ if Pictures.find().count() == 0
 
 Meteor.publish 'pictures', ->
 	Pictures.find()
+
+Meteor.publish 'chatroomPictures', ( chatroom ) ->
+	Pictures.find
+		room: chatroom

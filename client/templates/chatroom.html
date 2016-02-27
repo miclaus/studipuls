@@ -2,6 +2,7 @@
 
 	{{> welcome }}
 
+	<!--{{#if Template.subscriptionsReady }}-->
 	<div id="chatroom">
 		<div id="chatroom_info">
 
@@ -25,9 +26,10 @@
 		<div id="chatroom_content" class="container-fluid">
 			<!-- {{#HammerTouchArea gestureMap=chatroomGestures}} -->
 				<div id="chatroom_pictures" class="column">
+					{{#if pictures }}
 					<!-- {{#masonryContainer columnWidth=115 transitionDuration="0.1s" id="MasonryContainer" }} -->
 						{{#each pictures }}
-							<div class="chatroom-image col-xs-4 col-sm-4 col-md-4 display-table">
+							<div class="chatroom-image col-xs-6 col-sm-4 col-md-3 display-table">
 							<!-- {{#masonryElement "MasonryContainer" }} -->
 								<img
 									src="{{ url }}"
@@ -42,12 +44,11 @@
 							</div>
 						{{/each }}
 					<!-- {{/masonryContainer }} -->
-
-					{{#unless pictures }}
+					{{ else }}
 						<p id="chatroom_pictures_message">
 							Be the first to share live moments !
 						</p>
-					{{/unless }}
+					{{/if }}
 				</div>
 			<!-- {{/HammerTouchArea}} -->
 		</div>
@@ -72,4 +73,5 @@
 			</div>
 		{{/if }}
 	</div>
+	<!--{{/if }}-->
 </template>

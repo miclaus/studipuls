@@ -1,7 +1,5 @@
 #chatroom {
 	display: none;
-	width: 96%;
-	margin: 0 auto;
 }
 
 #chatroom h1 {
@@ -49,20 +47,20 @@
 }
 
 #chatroom_content {
+	width: 99%;
+	margin: 0 auto;
+	padding: 0;
 	margin-top: 120px;
 }
 
-#chatroom_pictures > div {
-	padding: 0;
-	padding-bottom: 6px;
-	padding-left: 3px;
-	padding-right: 3px;
+#chatroom_pictures {
+	margin-top: 5px;
 }
 
 .chatroom-image {
-	margin-bottom: 1.5em;
-	margin-left : 0;
-	margin-right : 0;
+	padding-bottom: 6px;
+	padding-left: 3px;
+	padding-right: 3px;
 }
 
 /* #chatroom_pictures > div:nth-child(odd) {
@@ -78,10 +76,6 @@
 	/* -webkit-filter: grayscale(100%);
 	filter: grayscale(100%); */
 	cursor: pointer;
-
-	-webkit-border-radius : 4px;
-	-moz-border-radius    : 4px;
-	border-radius         : 4px;
 }
 #chatroom_pictures img:hover {
 	-webkit-filter: grayscale(0%);
