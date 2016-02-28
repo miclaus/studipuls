@@ -32,12 +32,14 @@ resetSearchQuery = ->
 	Session.set 'searchQuery', ''
 	$('#search_chatrooms').val ''
 
+###
 Template.listview.onCreated ->
 	self = this
 	self.autorun ->
 		self.subscribe 'chatrooms'
 		self.subscribe 'pictures'
 		self.subscribe 'userdata'
+###
 
 Template.listview.rendered = ->
 	Tracker.autorun ->

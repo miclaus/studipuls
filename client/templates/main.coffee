@@ -13,6 +13,9 @@ Template.main.rendered = ->
 		if FlowRouter.current().path is '/'
 			$('#header_list_button').hide()
 			$('#header_search_button').show()
+		else if FlowRouter.current().path is 'notFound'
+			$('#header_list_button').hide()
+			$('#header_search_button').hide()
 		else
 			$('#header_list_button').show()
 			$('#header_search_button').hide()

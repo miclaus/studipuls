@@ -43,7 +43,7 @@ FlowRouter.route '/:chatroom',
                 main : 'chatroom'
 
         else
-            console.error 'show 404'
+            FlowRouter.go 'notFound'
 
 
     triggersEnter : [ (context, redirect) ->
@@ -73,6 +73,10 @@ FlowRouter.route '/:chatroom/:pictureId',
     ]
 
 
-### 404 ###
+### Not found route ###
 
-# TODO ...
+FlowRouter.notFound =
+	action : ->
+		BlazeLayout.render 'main',
+			top   : 'header'
+			main  : 'notFound'
