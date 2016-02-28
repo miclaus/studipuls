@@ -94,14 +94,14 @@
 	position: absolute;
 	/* top  : 1em;
 	left : 1em; */
-	bottom : 0;
+	bottom : 10px;
 	left : 0.6em;
 
-	width: 42px;
-	height : 42px;
+	width: 36px;
+	height : 34px;
 
-	padding-bottom: 14px;
-	padding-right: 12px;
+	/*padding-bottom: 14px;
+	padding-right: 12px;*/
 
 	font-family: 'dosissemibold', 'Helvetica Neue', Arial, sans-serif;
 	font-size: 1em;
@@ -109,7 +109,7 @@
 	/* background: #a11d3c; */
 	background: url('/img/heart.png') no-repeat;
 	background-size: contain;
-	background-origin: content-box;
+
 	/* border-radius: 50%; */
 	/* border-left-radius : 10px;
 	border-right-radius : 10px; */
