@@ -74,7 +74,7 @@ Template.chatroom.events
         FlowRouter.go pictureUrl
 
 
-    'click #chatroom_upload_icon, tap #chatroom_upload_icon': ->
+    'click #chatroom_upload_button, tap #chatroom_upload_button': ->
         $('.upload-trigger').click()
 
 
