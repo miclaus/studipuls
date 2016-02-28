@@ -28,4 +28,5 @@ Template.header.events {
 
 	'click #header_search_button': ->
 		$('#wrapper_search').slideToggle()
+		$('html, body').animate { scrollTop: 0 }, 'slow'
 }

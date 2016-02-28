@@ -70,6 +70,7 @@ FlowRouter.route '/:chatroom/:pictureId',
 
     triggersEnter : [ (context, redirect) ->
         Meteor.call 'updateUserRoom', context.params.chatroom
+        $('html, body').animate { scrollTop: 0 }, 'fast'
     ]
 
 
