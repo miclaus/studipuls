@@ -9,10 +9,11 @@ Template.picture.onRendered ->
 
 
 Template.picture.helpers {
-
+	###
 	pictureGestures: {
         'doubletap .picture-image': (event, templateInstance) -> likeMoment(event)
 	}
+	###
 
 	picture: ->
 		pictureId = Session.get 'pictureId'

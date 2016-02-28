@@ -7,8 +7,8 @@ Meteor.publish 'userdata', ->
 
 ### permissions ###
 
-# UserData.allow {
-# 	insert   : -> true
-# 	update   : -> false
-# 	remove   : -> false
-# }
+UserData.allow {
+	insert   : -> true
+	update   : -> true
+	remove   : -> true
+}

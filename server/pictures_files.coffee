@@ -1,6 +1,8 @@
 # NOTE - dev only
 #PicturesFiles.remove {}
 
+### publications ###
+
 Meteor.publish 'picturesFiles', ->
 	return PicturesFiles.find()
 
@@ -8,8 +10,8 @@ Meteor.publish 'picturesFiles', ->
 
 PicturesFiles.allow {
 	insert   : -> true
-	update   : -> false
-	remove   : -> true # TODO - change this for release !
+	update   : -> true
+	remove   : -> false
 	download : -> true
 }
 

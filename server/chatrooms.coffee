@@ -22,6 +22,15 @@ if Chatrooms.find().count() == 0
 	_.each chatrooms, (chatroom) ->
         Chatrooms.insert chatroom
 
+### publications ###
 
 Meteor.publish 'chatrooms', ->
 	Chatrooms.find()
+
+### permissions ###
+
+Chatrooms.allow {
+	insert   : -> false
+	update   : -> true
+	remove   : -> false
+}

@@ -19,8 +19,10 @@ searchChatrooms = ->
 		chatroom.moments = roomPictures.length
 		# get most loved moment
 		mostLovedMoment = _.max roomPictures, (picture) -> picture.likes
+		###
 		console.info 'mostLovedMoment : '
 		console.info mostLovedMoment
+		###
 		chatroom.thumb = if mostLovedMoment then mostLovedMoment.url else ''
 
 	chatrooms

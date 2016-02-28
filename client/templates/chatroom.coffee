@@ -14,11 +14,22 @@ window.addEventListener 'pagehide', (e) ->
         Chatrooms.update { _id : chatroomId }, $inc : { users : -1 }
     # return
 
+###
 Template.chatroom.onCreated ->
 	self = this
 	self.autorun ->
+		self.subscribe 'chatrooms'
 		self.subscribe 'chatroomPictures', Session.get 'chatroom'
 		self.subscribe 'userdata'
+
+		if self.subscriptionsReady
+			chatroom = Chatrooms.findOne { code : Session.get 'chatroom' }
+
+			if chatroom
+				Session.set 'chatroomName', chatroom.name
+			else
+				FlowRouter.go 'notFound'
+###
 
 ### onRendered ###
 
