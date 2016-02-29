@@ -110,8 +110,7 @@ Template.chatroom.events
 
       $('#upload_trigger').click()
       # local animation
-      puls(420)
-      puls(240,60,false)
+      puls(30,60,false)
 
 
     'change #upload_trigger': (event, template) ->
