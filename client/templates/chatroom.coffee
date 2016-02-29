@@ -72,7 +72,6 @@ Template.chatroom.helpers {
 }
 
 
-### other helpers ###
 puls = (animateIn = 120, animateOut = 60, color = true) ->
   $('#chatroom_upload_button').clearQueue().animate {
     'width'      : '66px',
@@ -103,7 +102,7 @@ Template.chatroom.events
 
 
     'click #chatroom_upload_icon, tap #chatroom_upload_icon': ->
-      # increase puls var
+      # increase pulses
       totalPulses = Session.get 'puls'
       newPulses   = parseInt(totalPulses) + 1
       Session.set 'puls', newPulses
