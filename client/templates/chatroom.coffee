@@ -34,15 +34,18 @@ Template.chatroom.onCreated ->
 ### onRendered ###
 
 Template.chatroom.onRendered ->
-    Tracker.autorun ->
-        $('#chatroom').fadeIn 300 if Session.equals 'hideWelcome', true
-        $('#chatroom').hide 0 if Session.equals 'hideWelcome', false
-        $('.chatroom-image img').unveil()
-        puls(400)
-        puls(200)
-        # TODO - find more performant way to do this !
-        # NOTE - this is highly unperformant !
-        Meteor.call 'clearUserData'
+  Tracker.autorun ->
+    $('#chatroom').fadeIn 300 if Session.equals 'hideWelcome', true
+    $('#chatroom').hide 0 if Session.equals 'hideWelcome', false
+    $('.chatroom-image img').unveil()
+
+    # TODO animate only after all pictures loaded
+    puls(420);
+    puls(240, 60, false);
+
+    # TODO - find more performant way to do this !
+    # NOTE - this is highly unperformant !
+    Meteor.call 'clearUserData'
 # end
 
 ### helpers ###
@@ -68,19 +71,22 @@ Template.chatroom.helpers {
 
 
 ### other helpers ###
-puls = (animateIn = 80, animateOut = 80) ->
+puls = (animateIn = 120, animateOut = 60, color = true) ->
   $('#chatroom_upload_button').clearQueue().animate {
-    'width'      : '70px',
-    'height'     : '70px',
-    'margin-top' : '2px',
+    'width'      : '66px',
+    'height'     : '66px',
+    'margin-top' : '4px',
     'font-size'  : '18px'
   }, animateIn, ->
+    $(this).css 'background', '#AE1F42' if color
     $(this).clearQueue().animate {
       'width'      : '60px',
       'height'     : '60px',
       'margin-top' : '7px',
       'font-size'  : '16px'
-    }, animateOut
+    }, animateOut, ->
+      $(this).css 'background', '#A11D3C' if color
+      return
     return
 
 
@@ -95,7 +101,7 @@ Template.chatroom.events
 
     'click #chatroom_upload_icon, tap #chatroom_upload_icon': ->
       $('#upload_trigger').click()
-      puls()
+      puls(30, 60)
 
 
     'change #upload_trigger': (event, template) ->

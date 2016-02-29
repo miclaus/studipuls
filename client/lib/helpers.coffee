@@ -1,5 +1,4 @@
 thumbnail = (base64, maxWidth, maxHeight) ->
-
   # Max size for thumbnail
   maxWidth  = 500 if typeof(maxWidth)  is 'undefined'
   maxHeight = 500 if typeof(maxHeight) is 'undefined'
