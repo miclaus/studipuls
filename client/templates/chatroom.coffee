@@ -102,14 +102,14 @@ Template.chatroom.events
 
 
   'click #chatroom_upload_icon, tap #chatroom_upload_icon': ->
-    # increase puls var
+    # increase pulses
     totalPulses = Session.get 'puls'
     newPulses   = parseInt(totalPulses) + 1
     Session.set 'puls', newPulses
 
     $('#upload_trigger').click()
     # local animation
-    puls(30, 60)
+    puls(30, 60, false)
 
 
   'change #upload_trigger': (event, template) ->
