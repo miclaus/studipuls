@@ -42,16 +42,16 @@ Template.listview.onCreated ->
 ###
 
 Template.listview.rendered = ->
-	Tracker.autorun ->
-		# animation to/from listview
-		if Session.equals 'hideWelcome', true
-			$('#listview').fadeIn 300
-		else
-			$('#listview').hide()
+  Tracker.autorun ->
+  # animation to/from listview
+  if Session.equals 'hideWelcome', true
+    $('#listview').fadeIn 300
+  else
+    $('#listview').hide()
 
 
 Template.listview.onDestroyed = ->
-	resetSearchQuery()
+  resetSearchQuery()
 
 
 Template.listview.helpers {
