@@ -34,12 +34,14 @@ Template.chatroom.onCreated ->
 ### onRendered ###
 
 Template.chatroom.onRendered ->
-  Session.setDefault 'puls', 0
-
   Tracker.autorun ->
     $('#chatroom').fadeIn 300 if Session.equals 'hideWelcome', true
     $('#chatroom').hide 0 if Session.equals 'hideWelcome', false
     $('.chatroom-image img').unveil()
+
+    # TODO animate only after all pictures loaded
+    puls(420);
+    puls(240, 60, false);
 
     # TODO - find more performant way to do this !
     # NOTE - this is highly unperformant !
@@ -49,29 +51,26 @@ Template.chatroom.onRendered ->
 ### helpers ###
 
 Template.chatroom.helpers {
-  # chatroomGestures: ->
-  #     'doubletap .chatroom-image': (event, templateInstance) ->
-  #         console.warn event.center.x + ' - ' + event.center.y
-  canUpload: ->
-      Accounts.user() isnt null
-  room: ->
-    Session.get 'chatroomName'
-  users: ->
-    chatroom = Session.get 'chatroom'
-    UserData.find({ room : chatroom }).fetch().length
-  moments: ->
-    chatroom = Session.get 'chatroom'
-    Pictures.find({ room : chatroom }).fetch().length
-  pictures: ->
-    totalPulses = Session.get 'puls'
-    puls(420)
-    puls(240,60,false)
-
-    chatroom = Session.get 'chatroom'
-    Pictures.find({ room : chatroom }, { sort : { createdAt : -1 } }).fetch()
+    # chatroomGestures: ->
+    #     'doubletap .chatroom-image': (event, templateInstance) ->
+    #         console.warn event.center.x + ' - ' + event.center.y
+    canUpload: ->
+        Accounts.user() isnt null
+	room: ->
+		Session.get 'chatroomName'
+	users: ->
+		chatroom = Session.get 'chatroom'
+		UserData.find({ room : chatroom }).fetch().length
+	moments: ->
+		chatroom = Session.get 'chatroom'
+		Pictures.find({ room : chatroom }).fetch().length
+	pictures: ->
+		chatroom = Session.get 'chatroom'
+		Pictures.find({ room : chatroom }, { sort : { createdAt : -1 } }).fetch()
 }
 
 
+### other helpers ###
 puls = (animateIn = 120, animateOut = 60, color = true) ->
   $('#chatroom_upload_button').clearQueue().animate {
     'width'      : '66px',
@@ -89,27 +88,20 @@ puls = (animateIn = 120, animateOut = 60, color = true) ->
       $(this).css 'background', '#A11D3C' if color
       return
     return
-  return
 
 
 Template.chatroom.events
   'click #chatroom_pictures, tap #chatroom_pictures': ->
-      chatroom   = Session.get 'chatroom'
-      pictureId  = $( event.target ).attr 'data-ref'
-      pictureUrl = '/' + chatroom + '/' + pictureId
+        chatroom   = Session.get 'chatroom'
+        pictureId  = $( event.target ).attr 'data-ref'
+        pictureUrl = '/' + chatroom + '/' + pictureId
 
-      FlowRouter.go pictureUrl
+        FlowRouter.go pictureUrl
 
 
     'click #chatroom_upload_icon, tap #chatroom_upload_icon': ->
-      # increase pulses
-      totalPulses = Session.get 'puls'
-      newPulses   = parseInt(totalPulses) + 1
-      Session.set 'puls', newPulses
-
       $('#upload_trigger').click()
-      # local animation
-      puls(30,60,false)
+      puls(30, 60)
 
 
     'change #upload_trigger': (event, template) ->
