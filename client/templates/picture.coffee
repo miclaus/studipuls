@@ -11,7 +11,7 @@ Template.picture.onRendered ->
 Template.picture.helpers {
   ###
   pictureGestures: {
-        'doubletap .picture-image': (event, templateInstance) -> likeMoment(event)
+    'doubletap .picture-image': (event, templateInstance) -> likeMoment(event)
   }
   ###
 
@@ -26,7 +26,6 @@ Template.picture.helpers {
 
 Template.picture.events {
   'click img, tap img, click #picture_likes, tap #picture_likes' : ->
-    console.log 'picture like'
     pictureId = Session.get 'pictureId'
     likedPictures = localStorage.getItem('likedPictures')
     # console.log likedPictures
@@ -36,6 +35,11 @@ Template.picture.events {
     if likedPictures.search( pictureId ) is -1
       Pictures.update { _id : pictureId }, $inc : { likes : 1 }
       saveDataToLocalStorage( pictureId )
+      # increase pulses
+      totalPulses = Session.get 'puls'
+      newPulses   = parseInt(totalPulses) + 1
+      Session.set 'puls', newPulses
+
 
   'click #picture_message_icon': ->
     $('#message').focus()
