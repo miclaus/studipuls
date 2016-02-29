@@ -29,14 +29,18 @@
 #header_search_button
 {
 	position  : fixed;
-	top       : 0.53em;
+	/*top       : 0.53em;*/
+  top       : 0;
+  padding   : 0.53em;
 	font-size : 2em;
 	cursor    : pointer;
 }
 #header_chatroom_button {
-	left  : 0.7em
+  /*left  : 0.7em*/
+  left  : 0.53em
 }
 #header_list_button,
 #header_search_button {
-	right : 0.7em
+  /*right : 0.7em*/
+  right : 0.53em
 }

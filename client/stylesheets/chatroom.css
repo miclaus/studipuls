@@ -125,10 +125,13 @@
 	right: 8px;
 } */
 
-#chatroom_upload {
+#chatroom_upload,
+#upload_trigger
+{
 	position: fixed;
 	bottom: 1.2em;
-	width: 96%;
+	/*width: 96%;*/
+  width: 100%;
 	margin: 0 auto;
 }
 
@@ -178,8 +181,8 @@
 	text-align: center;
 }
 
-.upload-trigger
+#upload_trigger
 {
-	visibility : hidden;
-	height     : 0;
+  visibility : hidden;
+  cursor     : pointer;
 }

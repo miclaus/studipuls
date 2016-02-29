@@ -38,6 +38,8 @@ Template.chatroom.onRendered ->
         $('#chatroom').fadeIn 300 if Session.equals 'hideWelcome', true
         $('#chatroom').hide 0 if Session.equals 'hideWelcome', false
         $('.chatroom-image img').unveil()
+        puls(400)
+        puls(200)
         # TODO - find more performant way to do this !
         # NOTE - this is highly unperformant !
         Meteor.call 'clearUserData'
@@ -65,8 +67,25 @@ Template.chatroom.helpers {
 }
 
 
+### other helpers ###
+puls = (animateIn = 80, animateOut = 80) ->
+  $('#chatroom_upload_button').clearQueue().animate {
+    'width'      : '70px',
+    'height'     : '70px',
+    'margin-top' : '2px',
+    'font-size'  : '18px'
+  }, animateIn, ->
+    $(this).clearQueue().animate {
+      'width'      : '60px',
+      'height'     : '60px',
+      'margin-top' : '7px',
+      'font-size'  : '16px'
+    }, animateOut
+    return
+
+
 Template.chatroom.events
-	'click #chatroom_pictures, tap #chatroom_pictures': ->
+  'click #chatroom_pictures, tap #chatroom_pictures': ->
         chatroom   = Session.get 'chatroom'
         pictureId  = $( event.target ).attr 'data-ref'
         pictureUrl = '/' + chatroom + '/' + pictureId
@@ -74,12 +93,13 @@ Template.chatroom.events
         FlowRouter.go pictureUrl
 
 
-    'click #chatroom_upload_button, tap #chatroom_upload_button': ->
-        $('.upload-trigger').click()
+    'click #chatroom_upload_icon, tap #chatroom_upload_icon': ->
+      $('#upload_trigger').click()
+      puls()
 
 
-    'change .upload-trigger': (event, template) ->
-        console.warn 'change .upload-trigger :'
+    'change #upload_trigger': (event, template) ->
+        console.warn 'change #upload_trigger :'
         FS.Utility.eachFile event, (file) ->
             chatroom  = Session.get 'chatroom'
             pictureId = Session.get 'pictureId'
@@ -117,4 +137,4 @@ Template.chatroom.events
                                         $('.chatroom-image img').unveil()
                         }
 
-                        $('.upload-trigger').val ''
+                        $('#upload_trigger').val ''
