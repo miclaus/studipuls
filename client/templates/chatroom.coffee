@@ -41,6 +41,9 @@ Template.chatroom.onRendered ->
     $('#chatroom').hide 0 if Session.equals 'hideWelcome', false
     $('.chatroom-image img').unveil()
 
+    puls(420)
+    puls(240,60,false)
+    
     # TODO - find more performant way to do this !
     # NOTE - this is highly unperformant !
     Meteor.call 'clearUserData'
