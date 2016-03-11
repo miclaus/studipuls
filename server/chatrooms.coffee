@@ -5,10 +5,10 @@ if Chatrooms.find().count() == 0
   chatrooms = [
     { name : 'Studenten Lounge', code : 'lounge',      users : 0, moments : 0 }
     { name : 'Besucher Lounge',  code : 'guest',       users : 0, moments : 0 }
-    { name : 'Mensa',            code : 'mensa',       users : 0, moments : 0 }
     { name : 'Aula',             code : 'aula',        users : 0, moments : 0 }
-    { name : 'Langeweile',       code : 'boring',      users : 0, moments : 0 }
+    { name : 'Mensa',            code : 'mensa',       users : 0, moments : 0 }
     { name : 'Bibliothek',       code : 'biblio',      users : 0, moments : 0 }
+    { name : 'Langeweile',       code : 'boring',      users : 0, moments : 0 }
     { name : 'Rosis',            code : 'rosis',       users : 0, moments : 0 }
     { name : 'Random Shots',     code : 'random',       users : 0, moments : 0 }
   ]
