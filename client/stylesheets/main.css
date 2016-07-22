@@ -1,0 +1,121 @@
+/* ========
+	COLORS
+   ======== */
+
+/*
+  #B3B3B3
+	#a11d3c
+*/
+
+/* =======
+	FONTS
+   ======= */
+
+@font-face {
+	font-family: 'dosisregular';
+	src: url('/fonts/dosis/dosis-regular-webfont.eot');
+	src: url('/fonts/dosis/dosis-regular-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('/fonts/dosis/dosis-regular-webfont.woff2') format('woff2'),
+		 url('/fonts/dosis/dosis-regular-webfont.woff') format('woff'),
+		 url('/fonts/dosis/dosis-regular-webfont.ttf') format('truetype'),
+		 url('/fonts/dosis/dosis-regular-webfont.svg#dosisregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+@font-face {
+	font-family: 'dosissemibold';
+	src: url('/fonts/dosis/dosis-semibold-webfont.eot');
+	src: url('/fonts/dosis/dosis-semibold-webfont.eot?#iefix') format('embedded-opentype'),
+		 url('/fonts/dosis/dosis-semibold-webfont.woff2') format('woff2'),
+		 url('/fonts/dosis/dosis-semibold-webfont.woff') format('woff'),
+		 url('/fonts/dosis/dosis-semibold-webfont.ttf') format('truetype'),
+		 url('/fonts/dosis/ddosis-semibold-webfont.svg#dosisregular') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+/* ========
+	GENERAL
+   ======== */
+
+html,
+body,
+#__blaze-root,
+#__blaze-root > div {
+	width: 100%;
+	height: 100%;
+}
+
+body {
+	overflow   : y-scroll;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+	font-family: 'dosisregular', 'Helvetica Neue', Arial, sans-serif;
+	color: #fff;
+
+	-webkit-font-smoothing  : antialiased;
+	-moz-osx-font-smoothing : grayscale;
+
+	margin: 0;
+}
+
+h1 {
+	font-size: 2.5em;
+	text-transform: capitalize;
+}
+
+h2 {
+	font-size: 1.4em;
+	margin-bottom: 15px;
+}
+
+input,
+select,
+textarea {
+	-webkit-appearance: none;
+	-moz-appearance: none;
+	appearance: none;
+	outline: none !important;
+	-webkit-border-radius:0px;
+}
+
+::-webkit-input-placeholder {
+   color: #333 !important;
+   font-family: 'dosisregular', 'Helvetica Neue', Arial, sans-serif;
+}
+
+:-moz-placeholder { /* Firefox 18- */
+   color: #333 !important;
+   font-family: 'dosisregular', 'Helvetica Neue', Arial, sans-serif;
+}
+
+::-moz-placeholder {  /* Firefox 19+ */
+   color: #333 !important;
+   font-family: 'dosisregular', 'Helvetica Neue', Arial, sans-serif;
+}
+
+:-ms-input-placeholder {
+   color: #333 !important;
+   font-family: 'dosisregular', 'Helvetica Neue', Arial, sans-serif;
+}
+
+/* ========
+	HELPERS
+   ======== */
+
+.display-table {
+	display: table;
+}
+
+.display-table-cell {
+	display: table-cell;
+	vertical-align: middle;
+}

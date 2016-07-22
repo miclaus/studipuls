@@ -1,0 +1,46 @@
+#header
+{
+	display    : none;
+	position   : fixed;
+	top        : 0;
+	left       : 0;
+	width      : 100%;
+	height     : 56px;
+	background : #a11d3c;
+	z-index    : 3;
+}
+
+#header_logo
+{
+	display    : block;
+	height     : 35px;
+	margin     : 0 auto;
+	margin-top : 1em;
+	cursor: pointer;
+}
+
+.header-shadow
+{
+	box-shadow : 0 4px 2px 0 rgba(0,0,0,.2), 0 3px 5px 0 rgba(0,0,0,.19);
+}
+
+#header_chatroom_button,
+#header_list_button,
+#header_search_button
+{
+	position  : fixed;
+	/*top       : 0.53em;*/
+  top       : 0;
+  padding   : 0.53em;
+	font-size : 2em;
+	cursor    : pointer;
+}
+#header_chatroom_button {
+  /*left  : 0.7em*/
+  left  : 0.53em
+}
+#header_list_button,
+#header_search_button {
+  /*right : 0.7em*/
+  right : 0.53em
+}

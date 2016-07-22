@@ -1,0 +1,77 @@
+<template name="chatroom">
+
+	{{> welcome }}
+
+	<!--{{#if Template.subscriptionsReady }}-->
+	<div id="chatroom">
+		<div id="chatroom_info">
+
+			<h1>{{ room }}</h1>
+
+			<p>{{ users }}</p>
+			<span
+				id="chatroom_users_icon"
+				class="chatroom-icon glyphicon glyphicon-user"
+				aria-hidden="true">
+			</span>
+
+			<p>{{ moments }}</p>
+			<span
+				id="chatroom_moments_icon"
+				class="chatroom-icon glyphicon glyphicon-camera"
+				aria-hidden="true">
+			</span>
+		</div>
+
+		<div id="chatroom_content" class="container-fluid">
+			<!-- {{#HammerTouchArea gestureMap=chatroomGestures}} -->
+				<div id="chatroom_pictures" class="column">
+					{{#if pictures }}
+					<!-- {{#masonryContainer columnWidth=115 transitionDuration="0.1s" id="MasonryContainer" }} -->
+						{{#each pictures }}
+							<div class="chatroom-image col-xs-6 col-sm-4 col-md-3 display-table">
+							<!-- {{#masonryElement "MasonryContainer" }} -->
+								<img
+									src="{{ url }}"
+									data-src="{{ url }}"
+									alt="{{ room }}"
+									data-ref="{{ _id }}">
+
+								<div class="chatroom-picture-likes display-table">
+									<p class="display-table-cell">{{ likes }}</p>
+								</div>
+							<!-- {{/masonryElement }} -->
+							</div>
+						{{/each }}
+					<!-- {{/masonryContainer }} -->
+					{{ else }}
+						<p id="chatroom_pictures_message">
+							Be the first to share live moments !
+						</p>
+					{{/if }}
+				</div>
+			<!-- {{/HammerTouchArea}} -->
+		</div>
+
+		{{#if canUpload }}
+			<div id="chatroom_upload">
+				<div id="chatroom_upload_circle_one">
+					<div id="chatroom_upload_circle_two">
+						<div id="chatroom_upload_button" class="display-table">
+							<i id="chatroom_upload_icon"
+								class="display-table-cell mdi-content-add needsclick">
+							</i>
+						</div>
+					</div>
+				</div>
+
+				<input
+					id="upload_trigger"
+					type="file"
+					name="upload-trigger"
+					accept="image/*">
+			</div>
+		{{/if }}
+	</div>
+<!--{{/if }}-->
+</template>

@@ -1,0 +1,72 @@
+<template name="listview">
+
+	{{> welcome }}
+
+	<div id="listview">
+<!--{{#if Template.subscriptionsReady }}-->
+		<div id="wrapper_search" class="form-group">
+			<div class="input-group">
+				<span class="input-group-addon">
+					<i id="search_icon" class="mdi-action-search"></i>
+				</span>
+
+				<input
+					type="text"
+					id="search_chatrooms"
+					class="form-control floating-label"
+					placeholder="Search for chatrooms">
+			</div>
+		</div>
+
+		<div id="listview_content" class="container-fluid">
+			<div id="list_chatroom" class="row">
+				{{#if chatrooms }}
+					{{#each chatrooms }}
+						<!-- <div
+							class="wrapper-list-chatroom-item col-xs-4 col-sm-4 col-md-3 display-table"
+							style="	background : url('{{ thumb }}') no-repeat center center;
+									background-size : 100%;"
+							data-ref="{{ name }}"> -->
+						<div
+							class="wrapper-list-chatroom-item col-xs-6 col-sm-4 col-md-3 display-table"
+							data-ref="{{ name }}">
+
+							{{#if thumb }}
+								<!--<div class="chatroom-item-thumbnail-wrapper">-->
+									<img class="chatroom-item-thumbnail" src="{{ thumb }}">
+								<!--</div>-->
+							{{/if }}
+
+							<div class="list-chatroom-item display-table-cell">
+								<h1>{{ name }}</h1>
+								<div class="wrapper-chatroom-users">
+									<span
+										id="list_chatroom_users_icon"
+										class="list-chatroom-icon glyphicon glyphicon-user"
+										aria-hidden="true">
+									</span>
+
+									<p>{{ users }}</p>
+								</div>
+								<div class="wrapper-chatroom-moments">
+									<span
+										id="list_chatroom_moments_icon"
+										class="list-chatroom-icon glyphicon glyphicon-camera"
+										aria-hidden="true">
+									</span>
+
+									<p>{{ moments }}</p>
+								</div>
+							</div>
+						</div>
+					{{/each }}
+				{{ else }}
+					<div id="search_no_results" sclass="col-xs-12">
+						<p>No chatrooms found.</p>
+					</div>
+				{{/if }}
+			</div>
+		</div>
+<!--{{/if }}-->
+	</div>
+</template>
